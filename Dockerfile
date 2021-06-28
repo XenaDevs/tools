@@ -11,9 +11,9 @@ WORKDIR /usr/src
 COPY . /usr/src
 
 # install dependencies
-RUN yarn install --ignore-engines
+RUN npm install --ignore-engines
 
 # start app
-RUN yarn build
+RUN npm run build
 EXPOSE 3000
 CMD yarn start
