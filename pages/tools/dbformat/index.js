@@ -28,16 +28,23 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="title">
-          <a>Database list formatter</a>
-        </h1>
+        <h1 className="title">Database list formatter</h1>
 
-        <div className="description">
-          Example input{' '}
+        <div className="description input">
+          Example input
           <code>
             <span>1</span>
             <span>1</span>
             <span>2</span>
+          </code>
+        </div>
+        <div className="description output">
+          Example output
+          <code>
+            <span>in (</span>
+            <span>'1',</span>
+            <span>'1',</span>
+            <span>'2')</span>
           </code>
         </div>
 
@@ -132,6 +139,8 @@ export default function Home() {
           font-size: 1.1rem;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+          display: flex;
+          flex-direction: column;
         }
 
         .grid {
