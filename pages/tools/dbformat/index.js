@@ -16,7 +16,6 @@ export default function Home() {
         )
         .join('\n') +
       ')';
-    console.log(result);
     navigator.clipboard.writeText(result);
   };
 
