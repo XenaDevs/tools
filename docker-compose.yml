@@ -1,0 +1,9 @@
+version: '3'
+services:
+  tools:
+    restart: unless-stopped
+    build: .
+    container_name: anderssontools
+    ports:
+      - '12353:3000'
+
