@@ -3,21 +3,28 @@ import { useState } from 'react';
 
 export default function Home() {
   const [dataInput, setDataInput] = useState('');
-  const translateToDbList = () => {
-    const result =
-      'in (\n' +
-      dataInput
-        .split('\n')
-        .filter((r) => r)
-        .map(
-          (r, i) =>
-            `'${r}'` +
-            (i === dataInput.split('\n').filter((r) => r).length - 1 ? '' : ',')
-        )
-        .join('\n') +
-      ')';
-    console.log(result);
-    navigator.clipboard.writeText(result);
+  const translateToDbList = async () => {
+    try {
+      const result =
+        'in (\n' +
+        dataInput
+          .split('\n')
+          .filter((r) => r)
+          .map(
+            (r, i) =>
+              `'${r}'` +
+              (i === dataInput.split('\n').filter((r) => r).length - 1
+                ? ''
+                : ',')
+          )
+          .join('\n') +
+        ')';
+
+      await navigator.clipboard.writeText(result);
+      console.log('copied');
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
