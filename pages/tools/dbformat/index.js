@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import TextArea from '../../../components/TextArea/index'
+import TextArea from '../../../components/TextArea/index';
 
 export default function Home() {
   const [dataInput, setDataInput] = useState('');
@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Hello</title>
+        <title>Tools - Database list formatter</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -48,15 +48,18 @@ export default function Home() {
           </code>
         </div>
 
+        <TextArea onChangeFunction={setDataInput} />
 
-        <TextArea onChangeFunction={setDataInput}/>
-
-        <button onClick={() => translateToDbList()} type="button" className="btn btn-primary">Format & Copy</button>
+        <button
+          onClick={() => translateToDbList()}
+          type="button"
+          className="btn btn-primary"
+        >
+          Format & Copy
+        </button>
       </main>
 
       <style jsx>{`
-
-
         main {
           padding: 5rem 0;
           flex: 1;
@@ -65,12 +68,6 @@ export default function Home() {
           justify-content: center;
           align-items: center;
         }
-
-
-
-
-
-
       `}</style>
     </div>
   );
