@@ -1,5 +1,5 @@
-const HomePage = () => {
-  return <h1>Hello</h1>;
-};
+function HomePage() {
+  return <div>Welcome to Next.js!</div>
+}
 
-export default HomePage;
+export default HomePage
