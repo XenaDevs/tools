@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import TextArea from '../../../components/TextArea/index';
+import TextArea from '../../../components/TextArea';
+import Button from '../../../components/Button';
 
 export default function Home() {
   const [dataInput, setDataInput] = useState('');
@@ -50,25 +51,12 @@ export default function Home() {
 
         <TextArea onChangeFunction={setDataInput} />
 
-        <button
-          onClick={() => translateToDbList()}
-          type="button"
-          className="btn btn-primary"
-        >
-          Format & Copy
-        </button>
+        <Button
+          onClickFunction={() => translateToDbList()}
+          title={'Format & Copy'}
+          disabled={dataInput.length === 0}
+        />
       </main>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-      `}</style>
     </div>
   );
 }
