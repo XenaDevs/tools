@@ -1,8 +1,10 @@
-export default function TextArea(props) {
+import { Textarea } from '@chakra-ui/react';
+
+export default function Text(props) {
   return (
     <div className="input-group">
       <span className="input-group-text">Input</span>
-      <textarea
+      <Textarea
         className="form-control"
         aria-label="With textarea"
         onChange={(e) => {
