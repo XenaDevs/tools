@@ -9,14 +9,3 @@ body {
 * {
   box-sizing: border-box;
 }
-
-code {
-  background: #555353;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-  display: flex;
-  flex-direction: column;
-}

@@ -1,5 +1,7 @@
-function HomePage() {
-  return <div>Welcome to Next.js!</div>;
-}
-
-export default HomePage;
+export default () => {
+  return (
+    <div className="container">
+      GOTO <a href="/tools">TOOLS</a>
+    </div>
+  );
+};

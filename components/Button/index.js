@@ -1,6 +1,6 @@
 import { Button } from '@chakra-ui/react';
 
-export default function ButtonB(props) {
+export default (props) => {
   return (
     <Button
       type="button"
@@ -11,4 +11,4 @@ export default function ButtonB(props) {
       {props.title}
     </Button>
   );
-}
+};
