@@ -2,8 +2,9 @@ import Head from 'next/head';
 import { useState } from 'react';
 import TextArea from '../../../components/TextArea';
 import Button from '../../../components/Button';
+import Code from '../../../components/Code';
 
-export default function Home() {
+export default () => {
   const [dataInput, setDataInput] = useState('');
   const translateToDbList = () => {
     const result =
@@ -33,20 +34,28 @@ export default function Home() {
 
         <div className="description input">
           Example input
-          <code>
-            <span>1</span>
-            <span>1</span>
-            <span>2</span>
-          </code>
+          <Code
+            code={
+              <>
+                <span>1</span>
+                <span>1</span>
+                <span>2</span>
+              </>
+            }
+          />
         </div>
         <div className="description output">
           Example output
-          <code>
-            <span>in (</span>
-            <span>'1',</span>
-            <span>'1',</span>
-            <span>'2')</span>
-          </code>
+          <Code
+            code={
+              <>
+                <span>in (</span>
+                <span>'1',</span>
+                <span>'1',</span>
+                <span>'2')</span>
+              </>
+            }
+          />
         </div>
 
         <TextArea onChangeFunction={setDataInput} />
@@ -59,4 +68,4 @@ export default function Home() {
       </main>
     </div>
   );
-}
+};
