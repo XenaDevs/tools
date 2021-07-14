@@ -1,6 +1,6 @@
 import { Code } from '@chakra-ui/react';
 
-export default (props) => {
+const CodeBox = (props) => {
   return (
     <Code
       colorScheme={props.colorScheme || 'gray'}
@@ -15,3 +15,5 @@ export default (props) => {
     </Code>
   );
 };
+
+export default CodeBox;
