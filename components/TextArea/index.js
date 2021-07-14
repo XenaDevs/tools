@@ -1,13 +1,13 @@
 import { Textarea } from '@chakra-ui/react';
 
-export default (props) => {
+const InputTextArea = (props) => {
   return (
     <div className="input-group">
       <span className="input-group-text">Input</span>
       <Textarea
         className="form-control"
         aria-label="With textarea"
-        placeholder={props.placeholder || ''}
+        placeholder={props.placeHolder || ''}
         onChange={(e) => {
           props.onChangeFunction(e.target.value);
         }}
@@ -17,3 +17,5 @@ export default (props) => {
     </div>
   );
 };
+
+export default InputTextArea;

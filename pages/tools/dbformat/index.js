@@ -3,9 +3,11 @@ import { useState } from 'react';
 import TextArea from '../../../components/TextArea';
 import Button from '../../../components/Button';
 import Code from '../../../components/Code';
+import { useToast } from '@chakra-ui/react';
 
-export default () => {
+const dbFormat = () => {
   const [dataInput, setDataInput] = useState('');
+  const toast = useToast();
   const translateToDbList = () => {
     const result =
       'in (\n' +
@@ -20,6 +22,14 @@ export default () => {
         .join('\n') +
       ')';
     navigator.clipboard.writeText(result);
+    toast({
+      title: 'Result copied to your clipboard',
+      description: "We've copied the data for you.",
+      status: 'success',
+      duration: 1500,
+      isClosable: true,
+      position: 'top-right',
+    });
   };
 
   return (
@@ -58,7 +68,10 @@ export default () => {
           />
         </div>
 
-        <TextArea onChangeFunction={setDataInput} />
+        <TextArea
+          placeHolder={'Paste data here...'}
+          onChangeFunction={setDataInput}
+        />
 
         <Button
           onClickFunction={() => translateToDbList()}
@@ -69,3 +82,5 @@ export default () => {
     </div>
   );
 };
+
+export default dbFormat;
