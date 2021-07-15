@@ -61,14 +61,7 @@ const Header = (props) => {
       <Box
         display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
         mt={{ base: 4, md: 0 }}
-      >
-        <Button
-          variant="outline"
-          _hover={{ bg: 'teal.700', borderColor: 'teal.700' }}
-        >
-          Create account
-        </Button>
-      </Box>
+      />
     </Flex>
   );
 };
