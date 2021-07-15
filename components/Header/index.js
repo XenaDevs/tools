@@ -27,7 +27,7 @@ const Header = (props) => {
       padding={6}
       bg="teal.500"
       color="white"
-      style={{ marginBottom: 50 }}
+      style={{ marginBottom: 30 }}
       {...props}
     >
       <Flex align="center" mr={5}>
