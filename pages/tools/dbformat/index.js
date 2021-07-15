@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import TextArea from '../../../components/TextArea';
+import TextArea from '../../../components/InputTextArea';
 import Button from '../../../components/Button';
-import Code from '../../../components/Code';
+import Code from '../../../components/CodeBox';
 import { useToast } from '@chakra-ui/react';
 
 const dbFormat = () => {

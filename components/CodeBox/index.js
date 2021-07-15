@@ -9,6 +9,7 @@ const CodeBox = (props) => {
         flexDirection: 'column',
         textAlign: 'center',
         width: props.width || '25%',
+        borderRadius: 3,
       }}
     >
       {props.code}
