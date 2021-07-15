@@ -7,6 +7,8 @@ const ButtonComponent = (props) => {
       className={`btn btn-lg btn-${props.buttonType || 'primary'}`}
       disabled={props.disabled}
       onClick={props.onClickFunction}
+      rightIcon={props.rightIcon || false}
+      leftIcon={props.leftIcon || false}
     >
       {props.title}
     </Button>
