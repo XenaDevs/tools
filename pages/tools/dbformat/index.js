@@ -3,6 +3,7 @@ import { useState } from 'react';
 import TextArea from '../../../components/InputTextArea';
 import Button from '../../../components/Button';
 import Code from '../../../components/CodeBox';
+import Heading from '../../../components/Heading';
 import { useToast } from '@chakra-ui/react';
 
 const dbFormat = () => {
@@ -40,7 +41,7 @@ const dbFormat = () => {
       </Head>
 
       <main>
-        <h1 className="title">Database list formatter</h1>
+        <Heading text={'Database list formatter'} />
 
         <div className="description input">
           Example input
