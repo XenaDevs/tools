@@ -3,8 +3,14 @@ import { Textarea } from '@chakra-ui/react';
 const InputTextArea = (props) => {
   return (
     <div className="input-group">
-      <span className="input-group-text">Input</span>
+      <span
+        className="input-group-text"
+        style={{ width: '100%', display: 'block' }}
+      >
+        Input
+      </span>
       <Textarea
+        style={{ width: props.width || '50%' }}
         className="form-control"
         aria-label="With textarea"
         placeholder={props.placeHolder || ''}

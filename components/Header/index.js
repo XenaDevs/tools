@@ -27,6 +27,7 @@ const Header = (props) => {
       padding={6}
       bg="teal.500"
       color="white"
+      style={{ marginBottom: 50 }}
       {...props}
     >
       <Flex align="center" mr={5}>
@@ -48,13 +49,13 @@ const Header = (props) => {
         mt={{ base: 4, md: 0 }}
       >
         <Text>
-          <Link href="/tools/dbformat">Docs</Link>
+          <Link href="/tools/dbformat">Db List Formatter</Link>
         </Text>
         <Text>
-          <Link href="/tools/test">Examples</Link>
+          <Link href="/tools/test">Test</Link>
         </Text>
         <Text>
-          <Link href="/tools/test">Blog</Link>
+          <Link href="/tools/test">Test</Link>
         </Text>
       </Stack>
 
