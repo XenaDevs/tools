@@ -10,7 +10,7 @@ const InputTextArea = (props) => {
         Input
       </span>
       <Textarea
-        style={{ width: props.width || '50%' }}
+        style={{ width: props.width || '50%', textAlign: 'left' }}
         className="form-control"
         aria-label="With textarea"
         placeholder={props.placeHolder || ''}
