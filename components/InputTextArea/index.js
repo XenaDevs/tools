@@ -14,6 +14,7 @@ const InputTextArea = (props) => {
         className="form-control"
         aria-label="With textarea"
         placeholder={props.placeHolder || ''}
+        isInvalid={props.isValid}
         onChange={(e) => {
           props.onChangeFunction(e.target.value);
         }}

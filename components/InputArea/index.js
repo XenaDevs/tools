@@ -7,6 +7,7 @@ const InputArea = (props) => {
       errorBorderColor="red.300"
       placeholder={props.placeholder}
       onChange={(e) => props.onChangeFunction(e.target.value)}
+      disabled={props.disabled}
     />
   );
 };
