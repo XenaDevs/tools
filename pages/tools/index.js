@@ -1,6 +1,4 @@
-import Head from 'next/head';
-
-export default () => {
+const home = () => {
   return (
     <div className="container">
       TODO: List all tools
@@ -10,3 +8,5 @@ export default () => {
     </div>
   );
 };
+
+export default home;

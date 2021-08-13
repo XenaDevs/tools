@@ -5,15 +5,11 @@ import {
   Heading,
   Flex,
   Text,
-  Button,
   useDisclosure,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
-// Note: This code could be better,
-// so I'd recommend you to understand how I solved and you could write yours better :)
-// Good luck! 🍀
 const Header = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleToggle = () => (isOpen ? onClose() : onOpen());
@@ -25,8 +21,6 @@ const Header = (props) => {
       justify="space-between"
       wrap="wrap"
       padding={6}
-      bg="teal.500"
-      color="white"
       style={{ marginBottom: 30 }}
       {...props}
     >
@@ -52,7 +46,7 @@ const Header = (props) => {
           <Link href="/tools/dbformat">Db List Formatter</Link>
         </Text>
         <Text>
-          <Link href="/tools/test">Test</Link>
+          <Link href="/tools/jsonpathtester">Json path tester</Link>
         </Text>
         <Text>
           <Link href="/tools/test">Test</Link>
