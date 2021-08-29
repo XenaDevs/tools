@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, Link, Heading, Box } from '@chakra-ui/react';
-
+import { Text, Heading, Box } from '@chakra-ui/react';
+import Link from 'next/link';
 import { BUILD_TOOLS_LIST } from '../utils/utils';
 
 const Home = () => {
