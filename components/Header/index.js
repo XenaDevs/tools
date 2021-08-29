@@ -6,6 +6,8 @@ import {
   Flex,
   Text,
   useDisclosure,
+  useColorMode,
+  Button,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { HamburgerIcon } from '@chakra-ui/icons';
@@ -13,6 +15,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 const Header = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleToggle = () => (isOpen ? onClose() : onOpen());
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Flex
@@ -53,10 +56,9 @@ const Header = (props) => {
         </Text>
       </Stack>
 
-      <Box
-        display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
-        mt={{ base: 4, md: 0 }}
-      />
+      <Button onClick={toggleColorMode}>
+        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+      </Button>
     </Flex>
   );
 };
