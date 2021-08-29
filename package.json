@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.3.0",
     "@sentry/nextjs": "^6.9.0",
     "framer-motion": "^4.1.17",
+    "fs": "0.0.1-security",
     "next": "^10.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"

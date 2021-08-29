@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, Link, Heading, Box } from '@chakra-ui/react';
 
-import TOOLS_LIST from './tools/utils';
+import { BUILD_TOOLS_LIST } from '../utils/utils';
 
 const Home = () => {
-  const tools = TOOLS_LIST.map((tool) => (
+  const tools = BUILD_TOOLS_LIST().map((tool) => (
     <>
       <Box my="4">
         <Link href={tool.path}>

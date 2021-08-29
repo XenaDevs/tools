@@ -18,7 +18,9 @@ const dbFormat = () => {
         .map(
           (r, i) =>
             `'${r}'` +
-            (i === dataInput.split('\n').filter((r) => r).length - 1 ? '' : ',')
+            (i === dataInput.split('\n').filter((r) => r).length - 1
+              ? ''
+              : ','),
         )
         .join('\n') +
       ')';
@@ -83,5 +85,9 @@ const dbFormat = () => {
     </div>
   );
 };
-
+dbFormat.toolMetaData = {
+  path: '/tools/dbformat',
+  label: 'DB formatter',
+  shortDesc: 'This tool formats your input to DB valid format.',
+};
 export default dbFormat;
