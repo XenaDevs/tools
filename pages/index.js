@@ -1,12 +1,21 @@
+import React from 'react';
+import { Text, Link, Heading, Box } from '@chakra-ui/react';
+
+import TOOLS_LIST from './tools/utils';
+
 const Home = () => {
-  return (
-    <div className="container">
-      TODO: List all tools
-      <br></br>
-      <br></br>
-      <a href="/tools/dbformat">1. dbformat</a>
-    </div>
-  );
+  const tools = TOOLS_LIST.map((tool) => (
+    <>
+      <Box my="4">
+        <Link href={tool.path}>
+          <Heading size="lg">{tool.label}</Heading>
+        </Link>
+        <Text>{tool.shortDesc}</Text>
+      </Box>
+    </>
+  ));
+
+  return tools;
 };
 
 export default Home;
