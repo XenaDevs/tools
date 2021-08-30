@@ -20,7 +20,7 @@ const BarCodes = () => {
         jsbarcode-value={value}
         jsbarcode-textmargin="0"
         jsbarcode-fontoptions="bold"
-      ></svg>
+      />
     );
   };
 
@@ -41,17 +41,17 @@ const BarCodes = () => {
       console.log(err);
       setError(err);
     }
-  });
+  }, []);
 
   return (
     <div className="container">
       <Head>
-        <title>Barcode Generator</title>
+        <title>{BarCodes.toolMetaData.label}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <Heading text={'Diff finder'} />
+        <Heading text={BarCodes.toolMetaData.label} />
 
         <Box>
           <Text>{error}</Text>
@@ -75,7 +75,7 @@ const BarCodes = () => {
 };
 BarCodes.toolMetaData = {
   path: '/tools/barcodes',
-  label: 'Barcodes',
+  label: 'Barcode Generator',
   shortDesc: 'Different barcode stuff',
 };
 export default BarCodes;
