@@ -1,10 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import TextArea from '../../../components/InputTextArea';
-import Button from '../../../components/Button';
-import Code from '../../../components/CodeBox';
-import Heading from '../../../components/Heading';
 import { useToast } from '@chakra-ui/react';
+import { Heading, Button, CodeBox, InputTextArea } from '../../../components';
 
 const dbFormat = () => {
   const [dataInput, setDataInput] = useState('');
@@ -47,7 +44,7 @@ const dbFormat = () => {
 
         <div className="description input">
           Example input
-          <Code
+          <CodeBox
             code={
               <>
                 <span>1</span>
@@ -59,7 +56,7 @@ const dbFormat = () => {
         </div>
         <div className="description output">
           Example output
-          <Code
+          <CodeBox
             code={
               <>
                 <span>in (</span>
@@ -71,7 +68,7 @@ const dbFormat = () => {
           />
         </div>
 
-        <TextArea
+        <InputTextArea
           placeHolder={'Paste data here...'}
           onChangeFunction={setDataInput}
         />
