@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
-    "test:ci": "jest"
+    "cypress": "cypress run",
+    "tcypress": "next build && next export && start-server-and-test start http://localhost:3000 cypress",
+    "test:ci": "jest && npm run tcypress"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.14",
@@ -31,10 +33,12 @@
     "@testing-library/react": "^12.0.0",
     "babel-jest": "^27.1.0",
     "babel-plugin-require-context-hook": "^1.0.0",
+    "cypress": "^8.3.1",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.1.0",
-    "react-test-renderer": "^17.0.2"
+    "react-test-renderer": "^17.0.2",
+    "start-server-and-test": "^1.13.1"
   }
 }
