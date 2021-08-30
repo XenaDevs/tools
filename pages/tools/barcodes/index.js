@@ -74,7 +74,7 @@ const barCodes = () => {
   );
 };
 barCodes.toolMetaData = {
-  path: '/tools/barCodes',
+  path: '/tools/barcodes',
   label: 'Barcodes',
   shortDesc: 'Different barcode stuff',
 };
