@@ -1,7 +1,16 @@
 module.exports = {
   presets: [
-    '@babel/preset-react',
+    [
+      '@babel/preset-react',
+      {
+        runtime: 'automatic',
+      },
+    ],
     ['@babel/preset-env', { targets: { node: 'current' } }],
   ],
-  plugins: ['require-context-hook'],
+  env: {
+    test: {
+      plugins: ['require-context-hook'],
+    },
+  },
 };

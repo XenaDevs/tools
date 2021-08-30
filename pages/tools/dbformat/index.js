@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useToast } from '@chakra-ui/react';
 import { Heading, Button, CodeBox, InputTextArea } from '../../../components';
 
-const dbFormat = () => {
+const DbFormat = () => {
   const [dataInput, setDataInput] = useState('');
   const toast = useToast();
   const translateToDbList = () => {
@@ -60,9 +60,9 @@ const dbFormat = () => {
             code={
               <>
                 <span>in (</span>
-                <span>'1',</span>
-                <span>'1',</span>
-                <span>'2')</span>
+                <span>{'1'},</span>
+                <span>{'1'},</span>
+                <span>{'2'})</span>
               </>
             }
           />
@@ -82,9 +82,9 @@ const dbFormat = () => {
     </div>
   );
 };
-dbFormat.toolMetaData = {
+DbFormat.toolMetaData = {
   path: '/tools/dbformat',
   label: 'DB formatter',
   shortDesc: 'This tool formats your input to DB valid format.',
 };
-export default dbFormat;
+export default DbFormat;

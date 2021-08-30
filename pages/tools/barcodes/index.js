@@ -6,7 +6,7 @@ import { Heading, Button, InputTextArea } from '../../../components';
 
 import { Box, Text, Wrap, WrapItem } from '@chakra-ui/react';
 
-const barCodes = () => {
+const BarCodes = () => {
   const [textAreaValues, setTextAreaValues] = useState(
     '111111111111\n222222222222\n333333333333\n444444444444\n',
   );
@@ -15,7 +15,7 @@ const barCodes = () => {
   const buildSvgIcon = (eanType, value) => {
     return (
       <svg
-        class="barcode"
+        className="barcode"
         jsbarcode-format={eanType}
         jsbarcode-value={value}
         jsbarcode-textmargin="0"
@@ -73,9 +73,9 @@ const barCodes = () => {
     </div>
   );
 };
-barCodes.toolMetaData = {
+BarCodes.toolMetaData = {
   path: '/tools/barcodes',
   label: 'Barcodes',
   shortDesc: 'Different barcode stuff',
 };
-export default barCodes;
+export default BarCodes;

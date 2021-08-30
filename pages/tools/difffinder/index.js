@@ -43,7 +43,7 @@ const Difffinder = () => {
             {missingValues[0]?.length > 0 && (
               <>
                 <Text>The above list is missing below values</Text>
-                <Code
+                <CodeBox
                   code={
                     <>
                       {missingValues[0].map((v, i) => (
