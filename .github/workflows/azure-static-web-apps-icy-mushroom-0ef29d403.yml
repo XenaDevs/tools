@@ -13,6 +13,8 @@ jobs:
   test_job:
     runs-on: ubuntu-latest
     name: Test Job
+    env:
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - name: Run tests
