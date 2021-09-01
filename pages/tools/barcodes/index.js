@@ -8,7 +8,7 @@ import { Box, Text, Wrap, WrapItem } from '@chakra-ui/react';
 
 const BarCodes = () => {
   const [textAreaValues, setTextAreaValues] = useState(
-    '111111111111\n222222222222\n333333333333\n444444444444\n',
+    '111111111111\n222222222222\n333333333333\n444444444444',
   );
   const [eanType, setEanType] = useState('EAN13');
   const [error, setError] = useState('');
@@ -30,7 +30,7 @@ const BarCodes = () => {
       .map((v, i) => <WrapItem key={i}>{buildSvgIcon(eanType, v)}</WrapItem>);
   };
 
-  useEffect(() => {
+  const generateBarcodes = () => {
     setError('');
     try {
       jsBarcode('.barcode', 'barcode', {
@@ -41,6 +41,15 @@ const BarCodes = () => {
       console.log(err);
       setError(err);
     }
+  };
+
+  const testing = async (val) => {
+    await setTextAreaValues(val);
+    await generateBarcodes();
+  };
+
+  useEffect(() => {
+    generateBarcodes();
   }, []);
 
   return (
@@ -57,17 +66,12 @@ const BarCodes = () => {
           <Text>{error}</Text>
           <InputTextArea
             placeHolder={'Paste data here...'}
-            onChangeFunction={setTextAreaValues}
+            onChangeFunction={testing}
             width={300}
             isValid={error}
           />
         </Box>
 
-        <Button
-          onClickFunction={() => console.log('hi')}
-          title={'Generate barcodes'}
-          disabled={textAreaValues.length === 0}
-        />
         <Wrap spacing="50px">{buildAllIcons()}</Wrap>
       </main>
     </div>
