@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import TextArea from '../../../components/InputTextArea';
-import Button from '../../../components/Button';
-import Code from '../../../components/CodeBox';
-import Heading from '../../../components/Heading';
+import { Heading, Button, CodeBox, InputTextArea } from '../../../components';
+
 import { Stack, Box, Text } from '@chakra-ui/react';
 
 const Difffinder = () => {
@@ -37,7 +35,7 @@ const Difffinder = () => {
           style={{ marginLeft: '10%' }}
         >
           <Box>
-            <TextArea
+            <InputTextArea
               placeHolder={'Paste data here...'}
               onChangeFunction={setLeftInput}
               width={300}
@@ -45,7 +43,7 @@ const Difffinder = () => {
             {missingValues[0]?.length > 0 && (
               <>
                 <Text>The above list is missing below values</Text>
-                <Code
+                <CodeBox
                   code={
                     <>
                       {missingValues[0].map((v, i) => (
@@ -58,7 +56,7 @@ const Difffinder = () => {
             )}
           </Box>
           <Box>
-            <TextArea
+            <InputTextArea
               placeHolder={'Paste data here...'}
               onChangeFunction={setRightInput}
               width={300}
@@ -66,7 +64,7 @@ const Difffinder = () => {
             {missingValues[1]?.length > 0 && (
               <>
                 <Text>The above list is missing below values</Text>
-                <Code
+                <CodeBox
                   code={
                     <>
                       {missingValues[1].map((v, i) => (
@@ -90,4 +88,9 @@ const Difffinder = () => {
   );
 };
 
+Difffinder.toolMetaData = {
+  path: '/tools/difffinder',
+  label: 'Diff-finder',
+  shortDesc: 'This tool will compare to inputs and find all the differences.',
+};
 export default Difffinder;

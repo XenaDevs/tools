@@ -1,12 +1,9 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import TextArea from '../../../components/InputTextArea';
-import Button from '../../../components/Button';
-import Code from '../../../components/CodeBox';
-import Heading from '../../../components/Heading';
 import { useToast } from '@chakra-ui/react';
+import { Heading, Button, CodeBox, InputTextArea } from '../../../components';
 
-const dbFormat = () => {
+const DbFormat = () => {
   const [dataInput, setDataInput] = useState('');
   const toast = useToast();
   const translateToDbList = () => {
@@ -18,7 +15,9 @@ const dbFormat = () => {
         .map(
           (r, i) =>
             `'${r}'` +
-            (i === dataInput.split('\n').filter((r) => r).length - 1 ? '' : ',')
+            (i === dataInput.split('\n').filter((r) => r).length - 1
+              ? ''
+              : ','),
         )
         .join('\n') +
       ')';
@@ -45,7 +44,7 @@ const dbFormat = () => {
 
         <div className="description input">
           Example input
-          <Code
+          <CodeBox
             code={
               <>
                 <span>1</span>
@@ -57,19 +56,19 @@ const dbFormat = () => {
         </div>
         <div className="description output">
           Example output
-          <Code
+          <CodeBox
             code={
               <>
                 <span>in (</span>
-                <span>'1',</span>
-                <span>'1',</span>
-                <span>'2')</span>
+                <span>{'1'},</span>
+                <span>{'1'},</span>
+                <span>{'2'})</span>
               </>
             }
           />
         </div>
 
-        <TextArea
+        <InputTextArea
           placeHolder={'Paste data here...'}
           onChangeFunction={setDataInput}
         />
@@ -83,5 +82,9 @@ const dbFormat = () => {
     </div>
   );
 };
-
-export default dbFormat;
+DbFormat.toolMetaData = {
+  path: '/tools/dbformat',
+  label: 'DB formatter',
+  shortDesc: 'This tool formats your input to DB valid format.',
+};
+export default DbFormat;

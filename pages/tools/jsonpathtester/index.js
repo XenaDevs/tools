@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import TextArea from '../../../components/InputTextArea';
-import InputArea from '../../../components/InputArea';
-import Heading from '../../../components/Heading';
-import CodeBox from '../../../components/CodeBox';
+import {
+  Heading,
+  CodeBox,
+  InputArea,
+  InputTextArea,
+} from '../../../components';
 
 const JsonPathTester = () => {
   const [dataInput, setDataInput] = useState('');
@@ -38,7 +40,7 @@ const JsonPathTester = () => {
       <main>
         <Heading text={'Json path tester'} />
 
-        <TextArea
+        <InputTextArea
           placeHolder={'Paste data here...'}
           onChangeFunction={inputJson}
         />
@@ -55,4 +57,9 @@ const JsonPathTester = () => {
   );
 };
 
+JsonPathTester.toolMetaData = {
+  path: '/tools/jsonpathtester',
+  label: 'JSON path tester',
+  shortDesc: 'This is a tool that test your json path.',
+};
 export default JsonPathTester;
