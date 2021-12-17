@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, Heading, Box, Link as ChakraLink } from '@chakra-ui/react';
 import Link from 'next/link';
-import { BUILD_TOOLS_LIST } from '../utils/utils';
+import { BUILD_TOOLS_LIST } from '../../utils/utils';
 
-const Home = () => {
+const ToolHome = () => {
   const tools = BUILD_TOOLS_LIST().map((tool, i) => (
     <Box my="4" key={i}>
       <ChakraLink>
@@ -19,4 +19,4 @@ const Home = () => {
   return tools;
 };
 
-export default Home;
+export default ToolHome;

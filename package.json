@@ -2,6 +2,7 @@
   "name": "learn-starter",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/tools",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
@@ -13,32 +14,33 @@
     "test:ci": "jest && npm run tcypress"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.15",
-    "@chakra-ui/react": "^1.6.7",
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "@sentry/nextjs": "^6.11.0",
+    "@chakra-ui/icons": "^1.1.1",
+    "@chakra-ui/react": "^1.7.3",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@sentry/nextjs": "^6.16.1",
     "ean13-lib": "^0.0.5",
-    "framer-motion": "^4.1.17",
+    "framer-motion": "^5.5.5",
     "fs": "0.0.1-security",
     "jsbarcode": "^3.11.5",
-    "next": "^11.1.2",
+    "next": "^12.0.7",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.15.0",
-    "@babel/preset-react": "^7.14.5",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "babel-jest": "^27.1.0",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "babel-jest": "^27.4.5",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "cypress": "^8.3.1",
-    "eslint": "^7.32.0",
-    "eslint-config-next": "^11.1.2",
+    "cypress": "^9.1.1",
+    "eslint": "^8.4.1",
+    "eslint-config-next": "^12.0.7",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.1.0",
+    "jest": "^27.4.5",
     "react-test-renderer": "^17.0.2",
-    "start-server-and-test": "^1.13.1"
+    "start-server-and-test": "^1.14.0"
   }
 }
