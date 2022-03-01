@@ -1,10 +1,11 @@
-import React from 'react';
-import { Text, Heading, Box, Link as ChakraLink } from '@chakra-ui/react';
-import Link from 'next/link';
-import { BUILD_TOOLS_LIST } from '../utils/utils';
+import React from "react";
+import { Text, Heading, Box, Link as ChakraLink } from "@chakra-ui/react";
+import Link from "next/link";
+import { ToolMetaData } from "../utils/utils";
+import { toolsList } from "../utils/tools";
 
 const Home = () => {
-  const tools = BUILD_TOOLS_LIST().map((tool, i) => (
+  const tools = toolsList.map((tool: ToolMetaData, i: number) => (
     <Box my="4" key={i}>
       <ChakraLink>
         <Link href={tool.path} passHref>
@@ -15,7 +16,6 @@ const Home = () => {
       <Text>{tool.shortDesc}</Text>
     </Box>
   ));
-
   return tools;
 };
 

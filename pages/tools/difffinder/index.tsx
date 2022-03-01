@@ -1,18 +1,18 @@
-import Head from 'next/head';
-import { useState } from 'react';
-import { Heading, Button, CodeBox, InputTextArea } from '../../../components';
+import Head from "next/head";
+import { useState } from "react";
+import { Heading, Button, CodeBox, InputTextArea } from "../../../components";
 
-import { Stack, Box, Text } from '@chakra-ui/react';
+import { Stack, Box, Text } from "@chakra-ui/react";
 
 const Difffinder = () => {
-  const [rDataInput, setRightInput] = useState('');
-  const [lDataInput, setLeftInput] = useState('');
-  const [missingValues, setMissingValues] = useState([]);
+  const [rightDataInput, setRightInput] = useState("");
+  const [leftDataInput, setLeftInput] = useState("");
+  const [missingValues, setMissingValues] = useState<string[][]>([]);
 
   const checkForDiffs = () => {
     setMissingValues([]);
-    const arr1 = rDataInput.split('\n');
-    const arr2 = lDataInput.split('\n');
+    const arr1 = rightDataInput.split("\n");
+    const arr2 = leftDataInput.split("\n");
     setMissingValues([
       arr1.filter((x) => !arr2.includes(x)),
       arr2.filter((x) => !arr1.includes(x)),
@@ -27,16 +27,16 @@ const Difffinder = () => {
       </Head>
 
       <main>
-        <Heading text={'Diff finder'} />
+        <Heading text="test" isTruncated={false} />
 
         <Stack
-          direction={['column', 'row']}
+          direction={["column", "row"]}
           spacing="25%"
-          style={{ marginLeft: '10%' }}
+          style={{ marginLeft: "10%" }}
         >
           <Box>
             <InputTextArea
-              placeHolder={'Paste data here...'}
+              placeHolder={"Paste data here..."}
               onChangeFunction={setLeftInput}
               width={300}
             />
@@ -57,7 +57,7 @@ const Difffinder = () => {
           </Box>
           <Box>
             <InputTextArea
-              placeHolder={'Paste data here...'}
+              placeHolder={"Paste data here..."}
               onChangeFunction={setRightInput}
               width={300}
             />
@@ -80,17 +80,12 @@ const Difffinder = () => {
 
         <Button
           onClickFunction={() => checkForDiffs()}
-          title={'Format & Copy'}
-          disabled={lDataInput.length === 0 || rDataInput.length === 0}
+          title={"Format & Copy"}
+          disabled={leftDataInput.length === 0 || rightDataInput.length === 0}
         />
       </main>
     </div>
   );
 };
 
-Difffinder.toolMetaData = {
-  path: '/tools/difffinder',
-  label: 'Diff-finder',
-  shortDesc: 'This tool will compare to inputs and find all the differences.',
-};
 export default Difffinder;

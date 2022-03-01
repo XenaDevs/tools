@@ -1,18 +1,18 @@
-import Head from 'next/head';
-import { useState } from 'react';
+import Head from "next/head";
+import { useState } from "react";
 import {
   Heading,
   CodeBox,
   InputArea,
   InputTextArea,
-} from '../../../components';
+} from "../../../components";
 
 const JsonPathTester = () => {
-  const [dataInput, setDataInput] = useState('');
+  const [_dataInput, setDataInput] = useState("");
   const [isInputValid, setIsInputValid] = useState(true);
-  const [jsonResult, setJsonResult] = useState('');
+  const [jsonResult, setJsonResult] = useState("");
 
-  const inputJson = (input) => {
+  const inputJson = (input: string) => {
     try {
       const parsedJson = JSON.parse(input);
       setDataInput(parsedJson);
@@ -22,11 +22,11 @@ const JsonPathTester = () => {
     }
   };
 
-  const testJson = (input) => {
+  const testJson = (input: string) => {
     try {
-      setJsonResult(eval('dataInput.' + input));
+      setJsonResult(eval("dataInput." + input));
     } catch (err) {
-      setJsonResult('Invalid JSON');
+      setJsonResult("Invalid JSON");
     }
   };
 
@@ -38,17 +38,17 @@ const JsonPathTester = () => {
       </Head>
 
       <main>
-        <Heading text={'Json path tester'} />
+        <Heading text={"Json path tester"} />
 
         <InputTextArea
-          placeHolder={'Paste data here...'}
+          placeHolder={"Paste data here..."}
           onChangeFunction={inputJson}
         />
 
         <InputArea
           onChangeFunction={testJson}
           isInvalid={!isInputValid}
-          placeholder={'test.files[0].filename'}
+          placeHolder={"test.files[0].filename"}
         />
 
         <CodeBox code={JSON.stringify(jsonResult)} />
@@ -57,9 +57,4 @@ const JsonPathTester = () => {
   );
 };
 
-JsonPathTester.toolMetaData = {
-  path: '/tools/jsonpathtester',
-  label: 'JSON path tester',
-  shortDesc: 'This is a tool that test your json path.',
-};
 export default JsonPathTester;
