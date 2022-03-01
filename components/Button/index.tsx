@@ -3,7 +3,7 @@ import { JSXElementConstructor, MouseEventHandler, ReactElement } from "react";
 
 export interface ButtonParams {
   buttonType?: string | null;
-  disabled: boolean;
+  disabled?: boolean;
   onClickFunction: MouseEventHandler<HTMLButtonElement>;
   rightIcon?:
     | ReactElement<any, string | JSXElementConstructor<any>>

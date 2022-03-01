@@ -2,7 +2,7 @@ import { Button as ChakraButton } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 
 export interface UuidButtonParams {
-  isClicked: boolean;
+  isClicked?: boolean;
   value: string;
   setIsClicked: Function;
 }
