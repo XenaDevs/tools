@@ -1,34 +1,32 @@
-import Head from 'next/head';
-import { useState } from 'react';
-import { useToast } from '@chakra-ui/react';
-import { Heading, Button, CodeBox, InputTextArea } from '../../../components';
+import Head from "next/head";
+import { useState } from "react";
+import { useToast } from "@chakra-ui/react";
+import { Heading, Button, CodeBox, InputTextArea } from "../../../components";
 
 const DbFormat = () => {
-  const [dataInput, setDataInput] = useState('');
+  const [dataInput, setDataInput] = useState("");
   const toast = useToast();
   const translateToDbList = () => {
     const result =
-      'in (\n' +
+      "in (\n" +
       dataInput
-        .split('\n')
+        .split("\n")
         .filter((r) => r)
         .map(
           (r, i) =>
             `'${r}'` +
-            (i === dataInput.split('\n').filter((r) => r).length - 1
-              ? ''
-              : ','),
+            (i === dataInput.split("\n").filter((r) => r).length - 1 ? "" : ",")
         )
-        .join('\n') +
-      ')';
+        .join("\n") +
+      ")";
     navigator.clipboard.writeText(result);
     toast({
-      title: 'Result copied to your clipboard',
+      title: "Result copied to your clipboard",
       description: "We've copied the data for you.",
-      status: 'success',
+      status: "success",
       duration: 1500,
       isClosable: true,
-      position: 'top-right',
+      position: "top-right",
     });
   };
 
@@ -40,19 +38,21 @@ const DbFormat = () => {
       </Head>
 
       <main>
-        <Heading text={'Database list formatter'} />
+        {<Heading text={"Database list formatter"} />}
 
         <div className="description input">
           Example input
-          <CodeBox
-            code={
-              <>
-                <span>1</span>
-                <span>1</span>
-                <span>2</span>
-              </>
-            }
-          />
+          {
+            <CodeBox
+              code={
+                <>
+                  <span>1</span>
+                  <span>1</span>
+                  <span>2</span>
+                </>
+              }
+            />
+          }
         </div>
         <div className="description output">
           Example output
@@ -60,31 +60,27 @@ const DbFormat = () => {
             code={
               <>
                 <span>in (</span>
-                <span>{'1'},</span>
-                <span>{'1'},</span>
-                <span>{'2'})</span>
+                <span>{"1"},</span>
+                <span>{"1"},</span>
+                <span>{"2"})</span>
               </>
             }
           />
         </div>
 
         <InputTextArea
-          placeHolder={'Paste data here...'}
+          placeHolder={"Paste data here..."}
           onChangeFunction={setDataInput}
         />
 
         <Button
           onClickFunction={() => translateToDbList()}
-          title={'Format & Copy'}
+          title={"Format & Copy"}
           disabled={dataInput.length === 0}
         />
       </main>
     </div>
   );
 };
-DbFormat.toolMetaData = {
-  path: '/tools/dbformat',
-  label: 'DB formatter',
-  shortDesc: 'This tool formats your input to DB valid format.',
-};
+
 export default DbFormat;
