@@ -1,14 +1,12 @@
-import { Code } from "@chakra-ui/react";
 import { ReactElement } from "react";
 
 export interface CodeBoxParams {
-  colorScheme?: string | null;
   width?: string | null;
   code: string | null | ReactElement<any, any>;
 }
 
 export const CodeBox = (params: CodeBoxParams) => {
-  const { code, colorScheme, width } = params;
+  const { code, width } = params;
 
   return (
     <div
@@ -18,8 +16,7 @@ export const CodeBox = (params: CodeBoxParams) => {
         alignItems: "center",
       }}
     >
-      <Code
-        colorScheme={colorScheme || "gray"}
+      <code
         style={{
           display: "flex",
           flexDirection: "column",
@@ -29,7 +26,7 @@ export const CodeBox = (params: CodeBoxParams) => {
         }}
       >
         {code}
-      </Code>
+      </code>
     </div>
   );
 };

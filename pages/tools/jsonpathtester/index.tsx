@@ -47,7 +47,6 @@ const JsonPathTester = () => {
 
         <InputArea
           onChangeFunction={testJson}
-          isInvalid={!isInputValid}
           placeHolder={"test.files[0].filename"}
         />
 

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 const jsBarcode = require("jsbarcode");
 import { Heading, InputTextArea } from "../../../components";
 import { toolMetaData } from "./tool-metadata";
-import { Box, Text, Wrap, WrapItem } from "@chakra-ui/react";
 
 const BarCodes = () => {
   const [textAreaValues, setTextAreaValues] = useState(
@@ -27,7 +26,7 @@ const BarCodes = () => {
   const buildAllIcons = () => {
     return textAreaValues
       .split("\n")
-      .map((v, i) => <WrapItem key={i}>{buildSvgIcon(eanType, v)}</WrapItem>);
+      .map((v, i) => <div key={i}>{buildSvgIcon(eanType, v)}</div>);
   };
 
   const generateBarcodes = () => {
@@ -62,17 +61,16 @@ const BarCodes = () => {
       <main>
         <Heading text={toolMetaData.label} />
 
-        <Box>
-          <Text>{error}</Text>
+        <div>
+          <p>{error}</p>
           <InputTextArea
             placeHolder={"Paste data here..."}
             onChangeFunction={testing}
             width={300}
-            isValid={!!error}
           />
-        </Box>
+        </div>
 
-        <Wrap spacing="50px">{buildAllIcons()}</Wrap>
+        <div>{buildAllIcons()}</div>
       </main>
     </div>
   );
