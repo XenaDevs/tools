@@ -7,7 +7,7 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head />
-        <body>
+        <body className="font-poppins bg-slate-700 text-slate-200">
           <Main />
           <NextScript />
         </body>
