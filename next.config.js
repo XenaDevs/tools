@@ -12,6 +12,7 @@ const sentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
   // For all available options, see:
   //
+  hideSourceMaps: true
 };
 
 const moduleExports = {

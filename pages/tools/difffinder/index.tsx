@@ -2,8 +2,6 @@ import Head from "next/head";
 import { useState } from "react";
 import { Heading, Button, CodeBox, InputTextArea } from "../../../components";
 
-import { Stack, Box, Text } from "@chakra-ui/react";
-
 const Difffinder = () => {
   const [rightDataInput, setRightInput] = useState("");
   const [leftDataInput, setLeftInput] = useState("");
@@ -27,14 +25,10 @@ const Difffinder = () => {
       </Head>
 
       <main>
-        <Heading text="test" isTruncated={false} />
+        <Heading text="test" />
 
-        <Stack
-          direction={["column", "row"]}
-          spacing="25%"
-          style={{ marginLeft: "10%" }}
-        >
-          <Box>
+        <div style={{ marginLeft: "10%" }}>
+          <div>
             <InputTextArea
               placeHolder={"Paste data here..."}
               onChangeFunction={setLeftInput}
@@ -42,7 +36,7 @@ const Difffinder = () => {
             />
             {missingValues[0]?.length > 0 && (
               <>
-                <Text>The above list is missing below values</Text>
+                <p>The above list is missing below values</p>
                 <CodeBox
                   code={
                     <>
@@ -54,8 +48,8 @@ const Difffinder = () => {
                 />
               </>
             )}
-          </Box>
-          <Box>
+          </div>
+          <div>
             <InputTextArea
               placeHolder={"Paste data here..."}
               onChangeFunction={setRightInput}
@@ -63,7 +57,7 @@ const Difffinder = () => {
             />
             {missingValues[1]?.length > 0 && (
               <>
-                <Text>The above list is missing below values</Text>
+                <p>The above list is missing below values</p>
                 <CodeBox
                   code={
                     <>
@@ -75,8 +69,8 @@ const Difffinder = () => {
                 />
               </>
             )}
-          </Box>
-        </Stack>
+          </div>
+        </div>
 
         <Button
           onClickFunction={() => checkForDiffs()}
