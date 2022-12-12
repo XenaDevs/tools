@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
 import {
-  Heading,
   CodeBox,
   InputArea,
   InputTextArea,
@@ -34,7 +33,6 @@ const JsonPathTester = () => {
       </Head>
 
       <main>
-        <Heading text={"Json path tester"} />
 
         <InputTextArea
           placeHolder={"Paste data here..."}
