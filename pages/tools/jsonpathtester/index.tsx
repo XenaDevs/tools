@@ -9,17 +9,13 @@ import {
 
 const JsonPathTester = () => {
   const [_dataInput, setDataInput] = useState("");
-  const [isInputValid, setIsInputValid] = useState(true);
   const [jsonResult, setJsonResult] = useState("");
 
   const inputJson = (input: string) => {
     try {
       const parsedJson = JSON.parse(input);
       setDataInput(parsedJson);
-      setIsInputValid(true);
-    } catch (err) {
-      setIsInputValid(false);
-    }
+    } catch (err) {}
   };
 
   const testJson = (input: string) => {
