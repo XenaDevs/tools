@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { Heading, Button } from "../../../components";
+import { Button } from "../../../components";
 import { UuidButton } from "../../../components";
 
 const UuidGenerator = () => {
@@ -16,7 +16,6 @@ const UuidGenerator = () => {
       </Head>
 
       <main>
-        <Heading text={"UUID generator"} />
 
         <div>
           <select

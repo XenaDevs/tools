@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
-import { Heading, Button, CodeBox, InputTextArea } from "../../../components";
+import { Button, CodeBox, InputTextArea } from "../../../components";
 
 const Difffinder = () => {
   const [rightDataInput, setRightInput] = useState("");
@@ -25,7 +25,6 @@ const Difffinder = () => {
       </Head>
 
       <main>
-        <Heading text="test" />
 
         <div style={{ marginLeft: "10%" }}>
           <div>

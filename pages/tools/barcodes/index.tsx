@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 //import { Ean13Utils } from "ean13-lib";
 const jsBarcode = require("jsbarcode");
-import { Heading, InputTextArea } from "../../../components";
+import { InputTextArea } from "../../../components";
 import { toolMetaData } from "./tool-metadata";
 
 const BarCodes = () => {
@@ -59,8 +59,6 @@ const BarCodes = () => {
       </Head>
 
       <main>
-        <Heading text={toolMetaData.label} />
-
         <div>
           <p>{error}</p>
           <InputTextArea
