@@ -13,7 +13,6 @@
     "test:ci": "jest && npm run tcypress"
   },
   "dependencies": {
-    "@sentry/nextjs": "^7.24.2",
     "ean13-lib": "^0.0.5",
     "jsbarcode": "^3.11.5",
     "next": "13.0.6",
