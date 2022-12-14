@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HomeButton, InputTextArea } from "../../../components";
+import { InputTextArea, Button } from "../../../components";
 
 const DbFormat = () => {
   const [dataInput, setDataInput] = useState("");
@@ -20,8 +20,8 @@ const DbFormat = () => {
     navigator.clipboard.writeText(result);
   };
   return (
-    <main className='px-10 md:px-20 lg:px-40 max-w-5xl mx-auto'>
-      <section className='min-h-screen pt-10'>
+    <main className='px-10 md:px-20 lg:px-30 max-w-5xl mx-auto'>
+      <section className='min-h-screen py-10'>
         <h2 className="text-xl">
           Database list formatter
         </h2>
@@ -54,15 +54,12 @@ const DbFormat = () => {
             onChangeFunction={setDataInput}
           />
 
-          <button
-            className="bg-CTA text-Black p-2 rounded-md hover:bg-opacity-90 disabled:hover:cursor-not-allowed"
+          <Button
             onClick={() => translateToDbList()}
             disabled={dataInput.length === 0}
-          >
-            Format & Copy
-          </button>
+            text="Format & Copy"
+          />
         </div>
-
       </section>
     </main>
   );
