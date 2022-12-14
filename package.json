@@ -10,7 +10,7 @@
     "test": "jest --runInBand",
     "cypress": "cypress run",
     "tcypress": "next build && next export && start-server-and-test start http://localhost:3000 cypress",
-    "test:ci": "jest && npm run tcypress"
+    "test:ci": "jest"
   },
   "dependencies": {
     "ean13-lib": "^0.0.5",
