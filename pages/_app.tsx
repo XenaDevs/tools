@@ -1,14 +1,17 @@
-import { ChakraProvider } from "@chakra-ui/react";
 import "../styles/globals.css";
-import { Header } from "../components";
 import type { AppProps } from "next/app";
+import {useRouter} from 'next/router'
+import { HomeButton } from "../components";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <ChakraProvider>
-      <Header />
+    const router = useRouter()
+    const notHomePath = router.pathname !== '/'
+
+    return (
+      <>
+      {notHomePath && <HomeButton />}
       <Component {...pageProps} />
-    </ChakraProvider>
+    </>
   );
 }
 

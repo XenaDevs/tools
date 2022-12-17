@@ -1,11 +1,9 @@
-import Head from "next/head";
 import { useState } from "react";
-import { useToast } from "@chakra-ui/react";
-import { Heading, Button, CodeBox, InputTextArea } from "../../../components";
+import { InputTextArea, Button } from "../../../components";
 
 const DbFormat = () => {
   const [dataInput, setDataInput] = useState("");
-  const toast = useToast();
+
   const translateToDbList = () => {
     const result =
       "in (\n" +
@@ -20,66 +18,50 @@ const DbFormat = () => {
         .join("\n") +
       ")";
     navigator.clipboard.writeText(result);
-    toast({
-      title: "Result copied to your clipboard",
-      description: "We've copied the data for you.",
-      status: "success",
-      duration: 1500,
-      isClosable: true,
-      position: "top-right",
-    });
   };
-
   return (
-    <div className="container">
-      <Head>
-        <title>Tools - Database list formatter</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        {<Heading text={"Database list formatter"} />}
-
-        <div className="description input">
-          Example input
-          {
-            <CodeBox
-              code={
-                <>
-                  <span>1</span>
-                  <span>1</span>
-                  <span>2</span>
-                </>
-              }
-            />
-          }
+    <main className='px-10 md:px-20 lg:px-30 max-w-5xl mx-auto'>
+      <section className='min-h-screen py-10'>
+        <h2 className="text-xl">
+          Database list formatter
+        </h2>
+        <div className="flex justify-center gap-24 lg:gap-36 mt-8">
+          <div>
+            <h3 className="text-xl">Example Input:</h3>
+            <p>
+              1 <br/>
+              2 <br/>
+              3 <br/>
+              4 <br/>
+              5
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl">Example Output:</h3>
+            <p>
+              in ( <br/>
+              &apos;1&apos;, <br/>
+              &apos;2&apos;, <br/>
+              &apos;3&apos;, <br/>
+              &apos;4&apos;, <br/>
+              &apos;5&apos;)
+            </p>
+          </div>
         </div>
-        <div className="description output">
-          Example output
-          <CodeBox
-            code={
-              <>
-                <span>in (</span>
-                <span>{"1"},</span>
-                <span>{"1"},</span>
-                <span>{"2"})</span>
-              </>
-            }
+        <div className="flex flex-col">
+          <InputTextArea
+            placeHolder={"Paste data here..."}
+            onChangeFunction={setDataInput}
+          />
+
+          <Button
+            onClick={() => translateToDbList()}
+            disabled={dataInput.length === 0}
+            text="Format & Copy"
           />
         </div>
-
-        <InputTextArea
-          placeHolder={"Paste data here..."}
-          onChangeFunction={setDataInput}
-        />
-
-        <Button
-          onClickFunction={() => translateToDbList()}
-          title={"Format & Copy"}
-          disabled={dataInput.length === 0}
-        />
-      </main>
-    </div>
+      </section>
+    </main>
   );
 };
 

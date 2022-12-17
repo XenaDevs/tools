@@ -1,30 +1,17 @@
-import { Button as ChakraButton } from "@chakra-ui/react";
-import { JSXElementConstructor, MouseEventHandler, ReactElement } from "react";
-
-export interface ButtonParams {
-  buttonType?: string | null;
-  disabled?: boolean;
-  onClickFunction: MouseEventHandler<HTMLButtonElement>;
-  rightIcon?:
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | undefined;
-  leftIcon?: ReactElement<any, string | JSXElementConstructor<any>> | undefined;
-  title: string;
+type props = {
+  disabled?: boolean
+  onClick: () => void
+  text: string
 }
 
-export const Button = (params: ButtonParams) => {
-  const { buttonType, disabled, onClickFunction, rightIcon, leftIcon, title } =
-    params;
+export const Button = ({disabled, onClick, text}: props) => {
   return (
-    <ChakraButton
-      type="button"
-      className={`btn btn-lg btn-${buttonType || "primary"}`}
-      disabled={disabled}
-      onClick={onClickFunction}
-      rightIcon={rightIcon}
-      leftIcon={leftIcon}
-    >
-      {title}
-    </ChakraButton>
-  );
-};
+    <button
+    className={'bg-CTA text-Black p-2 rounded-md hover:bg-opacity-90 disabled:hover:cursor-not-allowed'}
+    onClick={onClick}
+    disabled={disabled}
+  >
+    {text}
+  </button>
+  )
+}

@@ -2,13 +2,12 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 //import { Ean13Utils } from "ean13-lib";
 const jsBarcode = require("jsbarcode");
-import { Heading, InputTextArea } from "../../../components";
+import { InputTextArea } from "../../../components";
 import { toolMetaData } from "./tool-metadata";
-import { Box, Text, Wrap, WrapItem } from "@chakra-ui/react";
 
 const BarCodes = () => {
   const [textAreaValues, setTextAreaValues] = useState(
-    "111111111111\n222222222222\n333333333333\n444444444444"
+    "111111111111\n222222222222\n333333333333"
   );
   const [eanType, _setEanType] = useState("EAN13");
   const [error, setError] = useState("");
@@ -25,10 +24,14 @@ const BarCodes = () => {
   };
 
   const buildAllIcons = () => {
-    return textAreaValues
-      .split("\n")
-      .map((v, i) => <WrapItem key={i}>{buildSvgIcon(eanType, v)}</WrapItem>);
-  };
+    return (
+      <div className="gap-10 flex flex-wrap justify-center">
+        {textAreaValues
+        .split("\n")
+        .map((v, i) => buildSvgIcon(eanType, v))}
+      </div>
+    )
+  }
 
   const generateBarcodes = () => {
     setError("");
@@ -43,9 +46,9 @@ const BarCodes = () => {
     }
   };
 
-  const testing = async (val: string) => {
-    await setTextAreaValues(val);
-    await generateBarcodes();
+  const testing = (val: string) => {
+    setTextAreaValues(val);
+    generateBarcodes();
   };
 
   useEffect(() => {
@@ -53,28 +56,25 @@ const BarCodes = () => {
   }, []);
 
   return (
-    <div className="container">
-      <Head>
-        <title>{toolMetaData.label}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <main className='px-10 md:px-20 lg:px-30 max-w-5xl mx-auto'>
+      <section className='min-h-screen py-10'>
+        <Head>
+          <title>{toolMetaData.label}</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <main>
-        <Heading text={toolMetaData.label} />
+          <div>
+            <p>{error}</p>
+            <div className="mt-10"/>
+            <InputTextArea
+              placeHolder={"Paste data here..."}
+              onChangeFunction={testing}
+            />
+          </div>
 
-        <Box>
-          <Text>{error}</Text>
-          <InputTextArea
-            placeHolder={"Paste data here..."}
-            onChangeFunction={testing}
-            width={300}
-            isValid={!!error}
-          />
-        </Box>
-
-        <Wrap spacing="50px">{buildAllIcons()}</Wrap>
+          {buildAllIcons()}
+        </section>
       </main>
-    </div>
   );
 };
 

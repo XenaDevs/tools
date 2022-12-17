@@ -1,64 +1,51 @@
 import Head from "next/head";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { Select, Flex, Text } from "@chakra-ui/react";
-import { Heading, Button } from "../../../components";
-import { UuidButton } from "../../../components";
+import { Button } from "../../../components";
 
 const UuidGenerator = () => {
   const [amountToGenerate, setAmountToGenerate] = useState(1);
   const [uuids, setUuids] = useState<Array<string>>([]);
 
   return (
-    <div className="container">
-      <Head>
-        <title>Tools - UUID generator</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <Heading text={"UUID generator"} />
-
-        <Flex justifyContent={"center"} mt={5} ml={55}>
-          <Select
-            placeholder="Select amount"
+    <main className='px-10 md:px-20 lg:px-30 max-w-5xl mx-auto'>
+      <section className='min-h-screen py-20'>
+        <Head>
+          <title>Tools - UUID generator</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div className="mb-10">
+          <input
+            className="text-Black w-20 h-10 mr-5"
+            placeholder="Amount"
             onChange={(e) => setAmountToGenerate(parseInt(e.target.value))}
-            w={200}
-            mr={15}
-          >
-            <option value="1">1</option>
-            <option value="3">3</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-          </Select>
+          />
 
           <Button
-            title="Generate uuid"
-            onClickFunction={async () => {
+            text="Generate uuid"
+            onClick={async () => {
               setUuids([...Array(amountToGenerate)].map(() => uuidv4()));
             }}
           />
-        </Flex>
+        </div>
 
-        <Flex direction={"column"} mt={5}>
+
           {uuids.map((id) => {
             return (
-              <Flex key={id} justify={"center"} m={1}>
-                <Text>{id}</Text>
-                <UuidButton
-                  value={id}
-                  setIsClicked={
-                    () => console.log("todo, mark me as pressed in UI") // TODO
-                  }
-                />
-              </Flex>
+              <div className="flex gap-10 my-2 items-center justify-center" key={id}>
+                <p>{id}</p>
+                  <Button
+                    text="Copy"
+                    onClick={() => {
+                      navigator.clipboard.writeText(id);
+                    }}
+                  />
+              </div>
             );
           })}
-        </Flex>
-      </main>
-    </div>
+
+      </section>
+    </main>
   );
 };
 
