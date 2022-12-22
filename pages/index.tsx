@@ -1,11 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { ToolMetaData } from "../utils/utils";
-import { toolsList } from "../utils/tools";
 import Head from "next/head";
+import { ToolMetaData, toolsList } from "../utils/tools";
 
 const Home = () => {
-  const tools = toolsList.map((tool: ToolMetaData, i: number) => (
+  const navTools = toolsList.map((tool: ToolMetaData, i: number) => (
     <>
       <Link href={tool.path} passHref className="max-w-fit">
         <p className="text-3xl mb-2 underline">{tool.label}</p>
@@ -22,15 +21,13 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='px-10 md:px-20 lg:px-40'>
-        <section className='min-h-screen pt-10'>
-          <div className="flex flex-col gap-12 items-center">
-            {tools}
-          </div>
+      <main className="px-10 md:px-20 lg:px-40">
+        <section className="min-h-screen pt-10">
+          <div className="flex flex-col gap-12 items-center">{navTools}</div>
         </section>
       </main>
     </div>
-  )
+  );
 };
 
 export default Home;
