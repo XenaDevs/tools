@@ -26,12 +26,10 @@ const BarCodes = () => {
   const buildAllIcons = () => {
     return (
       <div className="gap-10 flex flex-wrap justify-center">
-        {textAreaValues
-        .split("\n")
-        .map((v, i) => buildSvgIcon(eanType, v))}
+        {textAreaValues.split("\n").map((v, i) => buildSvgIcon(eanType, v))}
       </div>
-    )
-  }
+    );
+  };
 
   const generateBarcodes = () => {
     setError("");
@@ -56,25 +54,25 @@ const BarCodes = () => {
   }, []);
 
   return (
-    <main className='px-10 md:px-20 lg:px-30 max-w-5xl mx-auto'>
-      <section className='min-h-screen py-10'>
+    <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
+      <section className="min-h-screen py-10">
         <Head>
           <title>{toolMetaData.label}</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-          <div>
-            <p>{error}</p>
-            <div className="mt-10"/>
-            <InputTextArea
-              placeHolder={"Paste data here..."}
-              onChangeFunction={testing}
-            />
-          </div>
+        <div>
+          <p>{error}</p>
+          <div className="mt-10" />
+          <InputTextArea
+            placeHolder={"Paste data here..."}
+            onChangeFunction={testing}
+          />
+        </div>
 
-          {buildAllIcons()}
-        </section>
-      </main>
+        {buildAllIcons()}
+      </section>
+    </main>
   );
 };
 

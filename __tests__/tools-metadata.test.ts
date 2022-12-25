@@ -1,9 +1,9 @@
 import { readdirSync } from "fs";
-import { BUILD_TOOLS_LIST } from "../utils/utils";
+import { toolsList } from "../utils/tools";
 
 describe("All tool components should export tool metadata", () => {
-  it("should get tool metadata for all tools", async () => {
-    const toolsMetaData = await BUILD_TOOLS_LIST();
+  it("should get tool metadata for all tools", () => {
+    const toolsMetaData = toolsList;
 
     toolsMetaData.forEach((metaData) => {
       expect(metaData.label).toEqual(expect.any(String));
