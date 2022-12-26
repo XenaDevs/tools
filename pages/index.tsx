@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { ToolMetaData, toolsList } from "../utils/tools";
+import { fuse } from "../utils/search";
 
 const Home = () => {
-  const navTools = toolsList.map((tool: ToolMetaData, i: number) => (
+  const [searchResult, setSearchResult] =
+    useState<Array<ToolMetaData>>(toolsList);
+
+  const navTools = searchResult.map((tool: ToolMetaData) => (
     <>
       <Link href={tool.path} passHref className="max-w-fit">
         <p className="text-3xl mb-2 underline">{tool.label}</p>
@@ -22,6 +26,20 @@ const Home = () => {
       </Head>
 
       <main className="px-10 md:px-20 lg:px-40">
+        <input
+          className="text-Black"
+          type={"search"}
+          onChange={(e) => {
+            const result = fuse.search(e.target.value);
+            const paths = result.map(({ item }) => item.path);
+
+            const foundTools = toolsList.filter((tool) =>
+              paths.includes(tool.path)
+            );
+
+            setSearchResult(foundTools.length > 0 ? foundTools : toolsList);
+          }}
+        />
         <section className="min-h-screen pt-10">
           <div className="flex flex-col gap-12 items-center">{navTools}</div>
         </section>

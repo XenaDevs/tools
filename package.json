@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "ean13-lib": "^0.0.5",
+    "fuse.js": "^6.6.2",
     "jsbarcode": "^3.11.5",
     "next": "13.0.6",
     "react": "18.2.0",

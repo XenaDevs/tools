@@ -4,6 +4,12 @@ import { toolMetaData as difffinder } from "../pages/tools/difffinder/tool-metad
 import { toolMetaData as jsonpathtester } from "../pages/tools/jsonpathtester/tool-metadata";
 import { toolMetaData as uuidgenerator } from "../pages/tools/uuidgenerator/tool-metadata";
 
+export interface ToolMetaData {
+  path: string;
+  label: string;
+  shortDesc: string;
+}
+
 export const toolsList: Array<ToolMetaData> = [
   barcodes,
   dbformat,
@@ -11,9 +17,3 @@ export const toolsList: Array<ToolMetaData> = [
   jsonpathtester,
   uuidgenerator,
 ];
-
-export interface ToolMetaData {
-  path: string;
-  label: string;
-  shortDesc: string;
-}
