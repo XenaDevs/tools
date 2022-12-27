@@ -2,25 +2,25 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { HomeButton } from "../components";
-import { useEffect } from "react";
-import { addToolVisit } from "../utils/local-storage";
+import { useEffect, useState } from "react";
+import { AddToolVisit } from "../utils/local-storage";
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
-  const notHomePath = router.pathname !== "/";
+  const [path, setPath] = useState<Boolean>(false);
 
   useEffect(() => {
-    const path = router.pathname;
-    if (!path.includes("/tools/")) return;
-    addToolVisit(path);
+    const notHomePath = router.pathname !== "/";
+    if (notHomePath) setPath(true);
+    AddToolVisit(router.pathname);
   }, [router.pathname]);
 
   return (
     <>
-      {notHomePath && <HomeButton />}
+      {path && <HomeButton />}
       <Component {...pageProps} />
     </>
   );
-}
+};
 
 export default MyApp;

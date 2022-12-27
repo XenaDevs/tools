@@ -8,7 +8,7 @@ const Discord = () => {
     if (!router.isReady) return;
 
     router.push("https://discord.gg/fJpypWzSyH");
-  }, [router.isReady]);
+  }, [router, router.isReady]);
 
   return <></>;
 };

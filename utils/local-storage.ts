@@ -1,17 +1,25 @@
 import { toolMap, ToolMetaData } from "./tools";
 
-const MOST_VISITED_TOOL_LOCAL_STORAGE_KEY = "tool-visits";
+const MOST_VISITED_TOOL_LOCAL_STORAGE_KEY = "topTools";
 
-export function addToolVisit(path: string): void {
-  if (
-    typeof window == "undefined" ||
-    window.localStorage == null ||
-    localStorage == null
-  ) {
-    return;
+export const GetVisitedTools = (): Record<
+  string,
+  { visits: number; tool: ToolMetaData }
+> => {
+  const result =
+    typeof window !== "undefined"
+      ? localStorage.getItem(MOST_VISITED_TOOL_LOCAL_STORAGE_KEY)
+      : null;
+
+  if (result == null) {
+    return {};
   }
 
-  const visitedTools = getVisitedTools();
+  return JSON.parse(result);
+};
+
+export const AddToolVisit = (path: string): void => {
+  const visitedTools = GetVisitedTools();
 
   if (visitedTools[path] == null) {
     visitedTools[path] = { visits: 0, tool: toolMap[path] };
@@ -19,29 +27,10 @@ export function addToolVisit(path: string): void {
 
   visitedTools[path].visits += 1;
 
-  localStorage.setItem(
-    MOST_VISITED_TOOL_LOCAL_STORAGE_KEY,
-    JSON.stringify(visitedTools)
-  );
-}
-
-export function getVisitedTools(): Record<
-  string,
-  { visits: number; tool: ToolMetaData }
-> {
-  if (
-    typeof window == "undefined" ||
-    window.localStorage == null ||
-    localStorage == null
-  ) {
-    return {};
+  if (typeof window !== "undefined") {
+    localStorage.setItem(
+      MOST_VISITED_TOOL_LOCAL_STORAGE_KEY,
+      JSON.stringify(visitedTools)
+    );
   }
-
-  const result = localStorage.getItem(MOST_VISITED_TOOL_LOCAL_STORAGE_KEY);
-
-  if (result == null) {
-    return {};
-  }
-
-  return JSON.parse(result);
-}
+};
