@@ -3,6 +3,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { ToolMetaData, toolsList } from "../utils/tools";
 import { fuse } from "../utils/search";
+import { getVisitedTools } from "../utils/local-storage";
 
 const Home = () => {
   const [searchResult, setSearchResult] =
@@ -10,9 +11,21 @@ const Home = () => {
 
   const navTools = searchResult.map((tool: ToolMetaData) => (
     <>
-      <Link href={tool.path} passHref className="max-w-fit">
+      <Link href={tool.path} key={tool.path} passHref className="max-w-fit">
         <p className="text-3xl mb-2 underline">{tool.label}</p>
         <h1 className="text-xl">{tool.shortDesc}</h1>
+      </Link>
+    </>
+  ));
+
+  const mostVisitedTools = Object.values(getVisitedTools()).sort(
+    (a, b) => b.visits - a.visits
+  );
+
+  const favoriteTools = mostVisitedTools.map(({ tool }) => (
+    <>
+      <Link href={tool.path} key={tool.path} passHref>
+        <p>{tool.label}</p>
       </Link>
     </>
   ));
@@ -36,10 +49,14 @@ const Home = () => {
             const foundTools = toolsList.filter((tool) =>
               paths.includes(tool.path)
             );
-
             setSearchResult(foundTools.length > 0 ? foundTools : toolsList);
           }}
         />
+
+        <section className="">
+          <div className="">{favoriteTools}</div>
+        </section>
+
         <section className="min-h-screen pt-10">
           <div className="flex flex-col gap-12 items-center">{navTools}</div>
         </section>

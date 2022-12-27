@@ -17,3 +17,12 @@ export const toolsList: Array<ToolMetaData> = [
   jsonpathtester,
   uuidgenerator,
 ];
+
+export const toolMap = toolsList.reduce(
+  (acc: Record<string, ToolMetaData>, tool) => {
+    acc[tool.path] = tool;
+
+    return acc;
+  },
+  {}
+);
