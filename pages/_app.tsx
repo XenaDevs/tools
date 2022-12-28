@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { HomeButton } from "../components";
-import { AddToolVisit } from "../utils/local-storage";
+import { addToolVisit } from "../utils/local-storage";
 import { useEffect } from "react";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -12,7 +12,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     const path = router.pathname;
     if (homePath) return;
-    AddToolVisit(path);
+    addToolVisit(path);
   }, [homePath, router.pathname]);
 
   return (
