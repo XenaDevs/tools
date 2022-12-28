@@ -3,7 +3,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { ToolMetaData, toolsList } from "../utils/tools";
 import { fuse } from "../utils/search";
-import { GetVisitedTools } from "../utils/local-storage";
+import { getVisitedTools } from "../utils/local-storage";
 
 const Home = () => {
   const [searchResult, setSearchResult] =
@@ -13,7 +13,7 @@ const Home = () => {
   >({});
 
   useEffect(() => {
-    const results = GetVisitedTools();
+    const results = getVisitedTools();
     setVisitedTools(results);
   }, []);
 

@@ -2,7 +2,7 @@ import { toolMap, ToolMetaData } from "./tools";
 
 const MOST_VISITED_TOOL_LOCAL_STORAGE_KEY = "topTools";
 
-export const GetVisitedTools = (): Record<
+export const getVisitedTools = (): Record<
   string,
   { visits: number; tool: ToolMetaData }
 > => {
@@ -16,8 +16,8 @@ export const GetVisitedTools = (): Record<
   return JSON.parse(results);
 };
 
-export const AddToolVisit = (path: string): void => {
-  const visitedTools = GetVisitedTools();
+export const addToolVisit = (path: string): void => {
+  const visitedTools = getVisitedTools();
 
   if (visitedTools[path] == null) {
     visitedTools[path] = { visits: 0, tool: toolMap[path] };
