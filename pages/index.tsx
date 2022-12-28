@@ -18,9 +18,9 @@ const Home = () => {
   }, []);
 
   const navTools = searchResult.map((tool: ToolMetaData, i) => (
-    <div key={i}>
-      <Link href={tool.path} passHref className="max-w-fit">
-        <h2 className="text-2xl mb-2 underline">{tool.label}</h2>
+    <div key={i} className="border text-Black bg-White p-4 w-full">
+      <Link href={tool.path} passHref>
+        <h2 className="text-2xl mb-2">{tool.label}</h2>
         <p>{tool.shortDesc}</p>
       </Link>
     </div>
@@ -31,7 +31,7 @@ const Home = () => {
   );
 
   const favoriteTools = mostVisitedTools.map(({ tool }, i) => (
-    <div key={i}>
+    <div key={i} className="underline text-CTA">
       <Link href={tool.path} passHref>
         <p>{tool.label}</p>
       </Link>
@@ -44,23 +44,31 @@ const Home = () => {
         <title>Xena-dev</title>
       </Head>
       <main className="px-10 md:px-20 lg:px-40">
-        <input
-          className="text-Black"
-          type={"search"}
-          onChange={(e) => {
-            const result = fuse.search(e.target.value);
-            const paths = result.map(({ item }) => item.path);
-
-            const foundTools = toolsList.filter((tool) =>
-              paths.includes(tool.path)
-            );
-            setSearchResult(foundTools.length > 0 ? foundTools : toolsList);
-          }}
-        />
-
         <section className="min-h-screen pt-10">
-          <div>{favoriteTools}</div>
-          <div className="grid grid-cols-4 gap-8 items-center">{navTools}</div>
+          <div className="bg-Black text-White p-4 mb-6 flex flex-col md:flex-row gap-4 justify-center">
+            Your top tools: {favoriteTools}
+          </div>
+
+          <div className="bg-White p-4 w-full md:w-2/3 mx-auto my-20">
+            <input
+              className="text-Black border w-4/5 p-1"
+              type={"search"}
+              placeholder="Search"
+              onChange={(e) => {
+                const result = fuse.search(e.target.value);
+                const paths = result.map(({ item }) => item.path);
+
+                const foundTools = toolsList.filter((tool) =>
+                  paths.includes(tool.path)
+                );
+                setSearchResult(foundTools.length > 0 ? foundTools : toolsList);
+              }}
+            />
+          </div>
+
+          <div className="mt-6 grid md:grid-cols-2 2xl:grid-cols-4 gap-10 items-center">
+            {navTools}
+          </div>
         </section>
       </main>
     </>
