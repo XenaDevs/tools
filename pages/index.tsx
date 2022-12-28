@@ -11,7 +11,7 @@ const Home = () => {
 
   const navTools = searchResult.map((tool: ToolMetaData, i) => (
     <div key={i}>
-      <Link href={tool.path} passHref className="max-w-fit ">
+      <Link href={tool.path} passHref className="max-w-fit">
         <h2 className="text-2xl mb-2 underline">{tool.label}</h2>
         <p>{tool.shortDesc}</p>
       </Link>

@@ -2,22 +2,22 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { HomeButton } from "../components";
-import { useEffect, useState } from "react";
 import { AddToolVisit } from "../utils/local-storage";
+import { useEffect } from "react";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
-  const [path, setPath] = useState<Boolean>(false);
+  const homePath = router.pathname === "/";
 
   useEffect(() => {
-    const notHomePath = router.pathname !== "/";
-    if (notHomePath) setPath(true);
-    AddToolVisit(router.pathname);
-  }, [router.pathname]);
+    const path = router.pathname;
+    if (homePath) return;
+    AddToolVisit(path);
+  }, [homePath, router.pathname]);
 
   return (
     <>
-      {path && <HomeButton />}
+      {!homePath && <HomeButton />}
       <Component {...pageProps} />
     </>
   );
