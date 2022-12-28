@@ -18,7 +18,10 @@ const Home = () => {
   }, []);
 
   const navTools = searchResult.map((tool: ToolMetaData, i) => (
-    <div key={i} className="border text-Black bg-White p-4 w-full">
+    <div
+      key={i}
+      className="border text-Black bg-White p-4 w-full rounded-md shadow-sm shadow-CTA"
+    >
       <Link href={tool.path} passHref>
         <h2 className="text-2xl mb-2">{tool.label}</h2>
         <p>{tool.shortDesc}</p>
@@ -45,11 +48,11 @@ const Home = () => {
       </Head>
       <main className="px-10 md:px-20 lg:px-40">
         <section className="min-h-screen pt-10">
-          <div className="bg-Black text-White p-4 mb-6 flex flex-col md:flex-row gap-4 justify-center">
+          <div className="bg-Black text-White p-4 mb-6ows flex flex-col md:flex-row gap-4 justify-center">
             Your top tools: {favoriteTools}
           </div>
 
-          <div className="bg-White p-4 w-full md:w-2/3 mx-auto my-20">
+          <div className="bg-White p-4 w-full md:w-2/3 mx-auto my-20 rounded-sm">
             <input
               className="text-Black border w-4/5 p-1"
               type={"search"}
@@ -66,7 +69,7 @@ const Home = () => {
             />
           </div>
 
-          <div className="mt-6 grid md:grid-cols-2 2xl:grid-cols-4 gap-10 items-center">
+          <div className="my-6 grid md:grid-cols-2 2xl:grid-cols-4 gap-10 items-center">
             {navTools}
           </div>
         </section>
