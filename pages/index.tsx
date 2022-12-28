@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { ToolMetaData, toolsList } from "../utils/tools";
@@ -8,6 +8,14 @@ import { GetVisitedTools } from "../utils/local-storage";
 const Home = () => {
   const [searchResult, setSearchResult] =
     useState<Array<ToolMetaData>>(toolsList);
+  const [visitedTools, setVisitedTools] = useState<
+    Record<string, { visits: number; tool: ToolMetaData }>
+  >({});
+
+  useEffect(() => {
+    const results = GetVisitedTools();
+    setVisitedTools(results);
+  }, []);
 
   const navTools = searchResult.map((tool: ToolMetaData, i) => (
     <div key={i}>
@@ -18,7 +26,7 @@ const Home = () => {
     </div>
   ));
 
-  const mostVisitedTools = Object.values(GetVisitedTools()).sort(
+  const mostVisitedTools = Object.values(visitedTools).sort(
     (a, b) => b.visits - a.visits
   );
 

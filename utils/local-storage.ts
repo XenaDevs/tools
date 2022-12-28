@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { toolMap, ToolMetaData } from "./tools";
 
 const MOST_VISITED_TOOL_LOCAL_STORAGE_KEY = "topTools";
@@ -7,13 +6,8 @@ export const GetVisitedTools = (): Record<
   string,
   { visits: number; tool: ToolMetaData }
 > => {
-  const [results, setResults] = useState<string | null>();
-
-  useEffect(() => {
-    const fetchTopTools =
-      localStorage.getItem(MOST_VISITED_TOOL_LOCAL_STORAGE_KEY) || null;
-    setResults(fetchTopTools);
-  }, []);
+  const results =
+    localStorage.getItem(MOST_VISITED_TOOL_LOCAL_STORAGE_KEY) || null;
 
   if (results == undefined) {
     return {};
@@ -31,10 +25,8 @@ export const AddToolVisit = (path: string): void => {
 
   visitedTools[path].visits += 1;
 
-  useEffect(() => {
-    localStorage.setItem(
-      MOST_VISITED_TOOL_LOCAL_STORAGE_KEY,
-      JSON.stringify(visitedTools)
-    );
-  });
+  localStorage.setItem(
+    MOST_VISITED_TOOL_LOCAL_STORAGE_KEY,
+    JSON.stringify(visitedTools)
+  );
 };
