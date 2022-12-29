@@ -4,6 +4,7 @@ import Head from "next/head";
 import { ToolMetaData, toolsList } from "../utils/tools";
 import { fuse } from "../utils/search";
 import { getVisitedTools } from "../utils/local-storage";
+import Footer from "./_footer";
 
 const Home = () => {
   const [searchResult, setSearchResult] =
@@ -72,6 +73,7 @@ const Home = () => {
           <div className="my-6 grid md:grid-cols-2 2xl:grid-cols-4 gap-10 items-center">
             {navTools}
           </div>
+          <Footer />
         </section>
       </main>
     </>
