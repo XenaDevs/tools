@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { HomeButton } from "../components";
 import { addToolVisit } from "../utils/local-storage";
 import { useEffect } from "react";
+import Footer from "./_footer";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -19,6 +20,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       {!homePath && <HomeButton />}
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 };
