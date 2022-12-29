@@ -18,8 +18,8 @@ const Difffinder = () => {
   };
 
   return (
-    <main className='px-10 md:px-20 lg:px-30 max-w-6xl mx-auto'>
-      <section className='min-h-screen py-10'>
+    <main className="px-10 md:px-20 lg:px-30 max-w-6xl mx-auto">
+      <section className="min-h-screen py-10">
         <Head>
           <title>Diff finder</title>
           <link rel="icon" href="/favicon.ico" />
@@ -32,7 +32,9 @@ const Difffinder = () => {
           <div className="w-full">
             {missingValues[0]?.length > 0 && (
               <>
-                <p className="text-xl font-medium mb-3">The below list is missing these values:</p>
+                <p className="text-xl font-medium mb-3">
+                  The below list is missing these values:
+                </p>
                 <p>
                   {missingValues[0].map((v, i) => (
                     <span key={i}>{v}</span>
@@ -49,7 +51,9 @@ const Difffinder = () => {
           <div className="w-full">
             {missingValues[1]?.length > 0 && (
               <>
-                <p className="text-xl font-medium mb-3">The below list is missing these values:</p>
+                <p className="text-xl font-medium mb-3">
+                  The below list is missing these values:
+                </p>
                 <p>
                   {missingValues[1].map((v, i) => (
                     <span key={i}>{v}</span>

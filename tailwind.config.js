@@ -6,13 +6,13 @@ module.exports = {
   ],
   theme: {
     colors: {
-      CTA: "#e9c46a",
-      BG: "#264653",
-      Accent: "#2a9d8f",
+      CTA: "#f9a826",
+      BG: "#1e1e24",
+      Accent: "#60c3ff",
       White: "#fbf5f3",
-      Black: "#1e1e24"
+      Black: "#1e1e24",
     },
     extend: {},
   },
   plugins: [],
-}
+};
