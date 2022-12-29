@@ -8,8 +8,8 @@ const Footer = () => {
         className="flex cursor-pointer ml-4 gap-2"
         onClick={() => window.open("/discord", "_blank")}
       >
-        <BsDiscord fill="#f9a826" className="text-xl" />
-        <h2 className="text-xl text-CTA">Contact us.</h2>
+        <BsDiscord fill="#f9a826" className="text-lg md:text-xl" />
+        <h2 className="text-lg text-CTA md:text-xl">Contact us.</h2>
       </div>
     </div>
   );
