@@ -55,7 +55,7 @@ const Home = () => {
           </div>
 
           <input
-            className="text-Black w-1/2 md:w-1/3 h-10 p-1 rounded my-20"
+            className="text-Black w-full  md:w-1/2 h-10 p-1 rounded my-20"
             type={"search"}
             placeholder="Search Tool"
             onChange={(e) => {
