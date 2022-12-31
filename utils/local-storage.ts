@@ -19,6 +19,8 @@ export const getVisitedTools = (): Record<
 export const addToolVisit = (path: string): void => {
   const visitedTools = getVisitedTools();
 
+  if (!path.includes("/tools/")) return;
+
   if (visitedTools[path] == null) {
     visitedTools[path] = { visits: 0, tool: toolMap[path] };
   }
