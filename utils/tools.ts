@@ -8,6 +8,7 @@ export interface ToolMetaData {
   path: string;
   label: string;
   shortDesc: string;
+  keywords: Array<string>;
 }
 
 export const toolsList: Array<ToolMetaData> = [

@@ -55,12 +55,13 @@ const BarCodes = () => {
 
   return (
     <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
-      <section className="min-h-screen py-10">
-        <Head>
-          <title>{toolMetaData.label}</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+      <Head>
+        <title>{toolMetaData.label}</title>
+        <meta name="keywords" content={toolMetaData.keywords.join(",")} />
+        <meta name="description" content={toolMetaData.shortDesc} />
+      </Head>
 
+      <section className="min-h-screen py-10">
         <div>
           <p>{error}</p>
           <div className="mt-10" />
