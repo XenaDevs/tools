@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import { Button, InputTextArea } from "../../../components";
+import { toolMetaData } from "./tool-metadata";
 
 const Difffinder = () => {
   const [rightDataInput, setRightInput] = useState("");
@@ -19,12 +20,13 @@ const Difffinder = () => {
 
   return (
     <main className="px-10 md:px-20 lg:px-30 max-w-6xl mx-auto">
-      <section className="min-h-screen py-10">
-        <Head>
-          <title>Diff finder</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+      <Head>
+        <title>{toolMetaData.label}</title>
+        <meta name="keywords" content={toolMetaData.keywords.join(",")} />
+        <meta name="description" content={toolMetaData.shortDesc} />
+      </Head>
 
+      <section className="min-h-screen py-10">
         <h2 className="text-xl mt-10">
           Compare two sets of inputs and find all differences
         </h2>

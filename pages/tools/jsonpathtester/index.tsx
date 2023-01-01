@@ -1,9 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
-import {
-  InputArea,
-  InputTextArea,
-} from "../../../components";
+import { InputArea, InputTextArea } from "../../../components";
+import { toolMetaData } from "./tool-metadata";
 
 const JsonPathTester = () => {
   const [_dataInput, setDataInput] = useState("");
@@ -25,16 +23,16 @@ const JsonPathTester = () => {
   };
 
   return (
-    <main className='px-10 md:px-20 lg:px-30 max-w-5xl mx-auto'>
-      <section className='min-h-screen py-20'>
-        <h2 className="text-xl mt-10">
-          Test your JSON path
-        </h2>
+    <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
+      <Head>
+        <title>{toolMetaData.label}</title>
+        <meta name="keywords" content={toolMetaData.keywords.join(",")} />
+        <meta name="description" content={toolMetaData.shortDesc} />
+      </Head>
+
+      <section className="min-h-screen py-20">
+        <h2 className="text-xl mt-10">Test your JSON path</h2>
         <div className="flex flex-col items-center">
-          <Head>
-            <title>Tools - Json path tester</title>
-            <link rel="icon" href="/favicon.ico" />
-          </Head>
           <InputTextArea
             placeHolder={"Paste data here..."}
             onChangeFunction={inputJson}
