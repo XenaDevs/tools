@@ -24,13 +24,13 @@ function SiteMap() {
   // getServerSideProps will return the sitemap
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const host = context.req.headers.host || "http://localhost"; // FIXME
+export const getServerSideProps: GetServerSideProps = async ({ res, req }) => {
+  const host = req.headers.host || "http://localhost"; // FIXME
   const sitemap = generateSiteMap(toolsList, host);
 
-  context.res.setHeader("Content-Type", "text/xml");
-  context.res.write(sitemap);
-  context.res.end();
+  res.setHeader("Content-Type", "text/xml");
+  res.write(sitemap);
+  res.end();
 
   return {
     props: {},
