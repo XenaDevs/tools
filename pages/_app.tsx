@@ -5,6 +5,7 @@ import { HomeButton } from "../components";
 import { addToolVisit } from "../utils/local-storage";
 import { useEffect } from "react";
 import Footer from "./_footer";
+import Head from "next/head";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -18,6 +19,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <Head>
+        <meta name="viewport" content="viewport-fit=cover" />
+      </Head>
       {!homePath && <HomeButton />}
       <Component {...pageProps} />
       <Footer />
