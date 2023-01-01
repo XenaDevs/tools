@@ -46,6 +46,10 @@ const Home = () => {
     <>
       <Head>
         <title>Xena-dev</title>
+        <meta name="twitter:title" content="Xena-dev" />
+        <meta name="keywords" content="tools, convert" />
+        <meta name="description" content="" /> {/* TODO */}
+        <meta name="twitter:description" content="" /> {/* TODO */}
       </Head>
       <main className="px-10 md:px-20 lg:px-40">
         <section className="min-h-screen pt-10">
