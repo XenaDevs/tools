@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://icy-mushroom-0ef29d403.azurestaticapps.net/sitemap.xml

@@ -24,7 +24,7 @@ const Home = () => {
       className="border text-Black bg-White p-4 w-full rounded-md shadow-md shadow-Accent"
     >
       <Link href={tool.path} passHref>
-        <h2 className="text-2xl mb-2">{tool.label}</h2>
+        <h1 className="text-2xl mb-2">{tool.label}</h1>
         <p>{tool.shortDesc}</p>
       </Link>
     </div>
@@ -46,6 +46,10 @@ const Home = () => {
     <>
       <Head>
         <title>Xena-dev</title>
+        <meta name="twitter:title" content="Xena-dev" />
+        <meta name="keywords" content="tools, convert" />
+        <meta name="description" content="" /> {/* TODO */}
+        <meta name="twitter:description" content="" /> {/* TODO */}
       </Head>
       <main className="px-10 md:px-20 lg:px-40">
         <section className="min-h-screen pt-10">
