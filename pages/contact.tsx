@@ -1,3 +1,4 @@
+import router from "next/router";
 import {
   AiFillTwitterSquare,
   AiFillLinkedin,
@@ -20,9 +21,21 @@ const Contact = () => {
               my skills and passion for technology.
             </p>
             <div className="flex justify-evenly text-4xl mt-2 text-CTA">
-              <AiFillTwitterSquare />
-              <AiFillLinkedin />
-              <AiFillGithub />
+              <AiFillTwitterSquare
+                onClick={() => router.push("https://twitter.com/JonatanSav")}
+              />
+              <AiFillLinkedin
+                onClick={() =>
+                  router.push(
+                    "https://www.linkedin.com/in/jonatan-saveljeff-a94650109/"
+                  )
+                }
+              />
+              <AiFillGithub
+                onClick={() =>
+                  router.push("https://github.com/Saveljeffjonatan")
+                }
+              />
             </div>
           </div>
 
