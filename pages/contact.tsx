@@ -37,8 +37,7 @@ const Contact = () => {
               and conversion rates. Let me help bring your vision to life with
               my skills and passion for technology.
             </p>
-            <p className="my-4 text-Accent text-xl">jonatan@freelance.com</p>
-            <div className="flex justify-evenly text-4xl mt-2 text-CTA">
+            <div className="flex justify-evenly text-4xl my-4 text-CTA">
               <AiFillTwitterSquare
                 onClick={() => router.push("https://twitter.com/JonatanSav")}
                 className="hover:cursor-pointer hover:bg-opacity-90"
@@ -58,6 +57,9 @@ const Contact = () => {
                 className="hover:cursor-pointer hover:bg-opacity-90"
               />
             </div>
+            <p className="hidden md:flex justify-center my-4 text-Accent text-xl">
+              saveljeffjonatan@gmail.com
+            </p>
           </div>
 
           <div className="mt-6 md:hidden" />
@@ -76,8 +78,7 @@ const Contact = () => {
               illo tempora. Libero minus voluptate dolorum totam, laborum
               voluptas impedit debitis!
             </p>
-            <p className="my-4 text-Accent text-xl">foo@andersson.lazy</p>
-            <div className="flex justify-evenly text-4xl mt-2 text-CTA">
+            <div className="flex justify-evenly text-4xl my-4 text-CTA">
               <AiFillTwitterSquare
                 className="hover:cursor-pointer hover:bg-opacity-90"
                 onClick={() => router.push("/")}
@@ -92,6 +93,9 @@ const Contact = () => {
                 className="hover:cursor-pointer hover:bg-opacity-90"
               />
             </div>
+            <p className="hidden md:flex justify-center text-Accent text-xl">
+              foo@andersson.lazy
+            </p>
           </div>
         </div>
 
