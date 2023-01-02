@@ -9,7 +9,7 @@ import { LinkButton } from "../components";
 const Contact = () => {
   return (
     <main className="px-10 md:px-20 lg:px-30 max-w-7xl mx-auto">
-      <section className="min-h-screen pt-10 md:mt-10">
+      <section className="min-h-full pt-10 md:mt-10">
         <div className="hidden md:flex md:flex-col max-w-4xl mx-auto">
           <h2 className="text-2xl text-Accent mb-2">
             Need help or have questions? <br /> Contact us on Discord or through
@@ -60,10 +60,10 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="mt-14 md:hidden" />
+          <div className="mt-6 md:hidden" />
           <div className="w-1 bg-CTA" />
 
-          <div className="mt-4 md:w-1/2" id="oscar">
+          <div className="mt-4 md:w-1/2 mb-8" id="oscar">
             <h2 className="text-xl md:text-2xl lg:text-3xl text-Accent">
               Oscar Andersson
             </h2>
