@@ -56,7 +56,7 @@ const Home = () => {
       </Head>
       <main className="px-10 md:px-20 lg:px-40">
         <Navbar />
-        <section className="min-h-screen pt-10">
+        <section className="min-h-full pt-10">
           <input
             className="text-Black w-full  md:w-1/2 h-10 p-1 rounded"
             type={"search"}
