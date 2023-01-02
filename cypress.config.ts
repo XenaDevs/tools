@@ -6,5 +6,6 @@ export default defineConfig({
     specPattern: "__tests__/cypress/*cy.{js,jsx,ts,tsx}",
     baseUrl: "http://localhost:3000",
     supportFile: false,
+    video: false,
   },
 });
