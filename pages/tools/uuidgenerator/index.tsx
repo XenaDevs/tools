@@ -14,6 +14,8 @@ const UuidGenerator = () => {
         <title>{toolMetaData.label}</title>
         <meta name="keywords" content={toolMetaData.keywords.join(",")} />
         <meta name="description" content={toolMetaData.shortDesc} />
+        <meta name="twitter:title" content={toolMetaData.label} />
+        <meta name="twitter:description" content={toolMetaData.shortDesc} />
       </Head>
 
       <section className="min-h-screen py-20">
