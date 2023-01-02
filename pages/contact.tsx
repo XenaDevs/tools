@@ -10,7 +10,7 @@ const Contact = () => {
   return (
     <main className="px-10 md:px-20 lg:px-30 max-w-7xl mx-auto">
       <section className="min-h-full pt-10 md:mt-10">
-        <div className="hidden md:flex md:flex-col max-w-4xl mx-auto">
+        <div className="hidden mt-6 md:mt-0 lg:flex lg:flex-col max-w-4xl mx-auto">
           <h2 className="text-2xl text-Accent mb-2">
             Need help or have questions? <br /> Contact us on Discord or through
             our social media.
@@ -23,9 +23,9 @@ const Contact = () => {
             forward to helping you in any way we can.
           </p>
         </div>
-        <div className="flex flex-col mt-5 md:flex-row md:mt-20 md:gap-20 justify-between">
-          <div className="mt-4 md:w-1/2" id="jonatan">
-            <h2 className="text-xl md:2xl lg:text-3xl text-Accent">
+        <div className="flex flex-col mt-5 lg:flex-row lg:mt-20 lg:gap-20 justify-between">
+          <div className="mt-4 lg:w-1/2" id="jonatan">
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-Accent">
               Jonatan Saveljeff
             </h2>
             <h3 className="text-md md:text-lg lg:text-xl">
@@ -62,10 +62,10 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="mt-6 md:hidden" />
+          <div className="my-6 lg:hidden" />
           <div className="w-1 bg-CTA" />
 
-          <div className="mt-4 md:w-1/2 mb-8" id="oscar">
+          <div className="mt-4 lg:w-1/2 mb-8" id="oscar">
             <h2 className="text-xl md:text-2xl lg:text-3xl text-Accent">
               Oscar Andersson
             </h2>
@@ -99,9 +99,10 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="hidden md:flex mt-32" />
+        <div className="hidden lg:flex mt-32" />
+        <div className="mt-8 lg:hidden" />
 
-        <div className="hidden md:flex flex-col w-fit mx-auto">
+        <div className="hidden lg:flex flex-col w-fit mx-auto">
           <LinkButton href="/discord" target={"_blank"}>
             Support Discord
           </LinkButton>
