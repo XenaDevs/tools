@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { Head } from "components/Head/Head";
 import { useEffect, useState } from "react";
 //import { Ean13Utils } from "ean13-lib";
 const jsBarcode = require("jsbarcode");
@@ -55,13 +55,7 @@ const BarCodes = () => {
 
   return (
     <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
-      <Head>
-        <title>{toolMetaData.label}</title>
-        <meta name="keywords" content={toolMetaData.keywords.join(",")} />
-        <meta name="description" content={toolMetaData.shortDesc} />
-        <meta name="twitter:title" content={toolMetaData.label} />
-        <meta name="twitter:description" content={toolMetaData.shortDesc} />
-      </Head>
+      <Head tool={toolMetaData} />
 
       <section className="min-h-screen py-10">
         <div>
