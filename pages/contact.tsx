@@ -1,10 +1,10 @@
+import Link from "next/link";
 import router from "next/router";
 import {
   AiFillTwitterSquare,
   AiFillLinkedin,
   AiFillGithub,
 } from "react-icons/ai";
-import { LinkButton } from "../components";
 
 const Contact = () => {
   return (
@@ -103,9 +103,13 @@ const Contact = () => {
         <div className="mt-8 lg:hidden" />
 
         <div className="hidden lg:flex flex-col w-fit mx-auto">
-          <LinkButton href="/discord" target={"_blank"}>
+          <Link
+            className="bg-CTA text-Black text-lg p-2 rounded-md w-fit mx-auto"
+            href="/discord"
+            target="_blank"
+          >
             Support Discord
-          </LinkButton>
+          </Link>
         </div>
       </section>
     </main>
