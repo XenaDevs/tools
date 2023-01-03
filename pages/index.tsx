@@ -4,6 +4,7 @@ import Head from "next/head";
 import { ToolMetaData, toolsList } from "../utils/tools";
 import { fuse } from "../utils/search";
 import { getVisitedTools } from "../utils/local-storage";
+import Navbar from "./_navbar";
 
 const Home = () => {
   const [searchResult, setSearchResult] =
@@ -52,14 +53,10 @@ const Home = () => {
         <meta name="twitter:description" content="" /> {/* TODO */}
       </Head>
       <main className="px-10 md:px-20 lg:px-40">
-        <section className="min-h-screen pt-10">
-          <div className="bg-Black text-White p-4 mb-6ows flex flex-col md:flex-row gap-4 justify-center">
-            <span className="text-Accent">Your top tools: </span>
-            {favoriteTools}
-          </div>
-
+        <Navbar />
+        <section className="min-h-full pt-10">
           <input
-            className="text-Black w-full  md:w-1/2 h-10 p-1 rounded my-20"
+            className="text-Black w-full  md:w-1/2 h-10 p-1 rounded"
             type={"search"}
             placeholder="Search Tool"
             onChange={(e) => {
@@ -72,6 +69,13 @@ const Home = () => {
               setSearchResult(foundTools.length > 0 ? foundTools : toolsList);
             }}
           />
+
+          <div className="bg-Black text-White p-4 mb-6 flex flex-col md:flex-row gap-4 justify-center">
+            {favoriteTools.length > 0 && (
+              <span className="text-Accent">Your top tools: </span>
+            )}
+            {favoriteTools}
+          </div>
 
           <div className="my-6 grid md:grid-cols-2 2xl:grid-cols-4 gap-10 items-center">
             {navTools}
