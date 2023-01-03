@@ -14,8 +14,6 @@ const Home = () => {
     Record<string, { visits: number; tool: ToolMetaData }>
   >({});
 
-  const showTopTools = Object.keys(visitedTools).length > 0;
-
   useEffect(() => {
     const results = getVisitedTools();
     setVisitedTools(results);
@@ -73,7 +71,7 @@ const Home = () => {
           />
 
           <div className="bg-Black text-White p-4 mb-6 flex flex-col md:flex-row gap-4 justify-center">
-            {showTopTools && (
+            {favoriteTools.length > 0 && (
               <span className="text-Accent">Your top tools: </span>
             )}
             {favoriteTools}
