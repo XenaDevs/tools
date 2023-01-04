@@ -31,9 +31,9 @@ const Home = () => {
     </div>
   ));
 
-  const mostVisitedTools = Object.values(visitedTools).sort(
-    (a, b) => b.visits - a.visits
-  );
+  const mostVisitedTools = Object.values(visitedTools)
+    .sort((a, b) => b.visits - a.visits)
+    .slice(0, 3);
 
   const favoriteTools = mostVisitedTools.map(({ tool }, i) => (
     <div key={i} className="underline text-CTA">
