@@ -62,7 +62,7 @@ const Contact = () => {
           </div>
 
           <div className="my-6 lg:hidden" />
-          <div className="w-1 bg-CTA" />
+          <div className="w-1 bg-Accent" />
 
           <div className="mt-4 lg:w-1/2 mb-8" id="oscar">
             <h2 className="text-xl md:text-2xl lg:text-3xl text-Accent">
