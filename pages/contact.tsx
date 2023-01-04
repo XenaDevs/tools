@@ -12,15 +12,23 @@ const Contact = () => {
       <section className="min-h-full pt-10 md:mt-10">
         <div className="hidden mt-6 md:mt-0 lg:flex lg:flex-col max-w-4xl mx-auto">
           <h2 className="text-2xl text-Accent mb-2">
-            Need help or have questions? <br /> Contact us on Discord or through
-            our social media.
+            Welcome to our contact page!
           </h2>
           <p className="text-lg">
-            We&apos;re a small team of two dedicated to providing great support
-            for our project. Your feedback is important to us, and we offer free
-            feature requests in our Discord community. Thank you for using our
-            project and for supporting us. We appreciate your business and look
-            forward to helping you in any way we can.
+            Thank you for taking the time to visit our contact page. Our team is
+            small but mighty, and we are committed to providing the best support
+            possible for our project. We value your feedback and are constantly
+            striving to improve our services. That&apos;s why we offer free
+            feature requests in our Discord community, where you can share your
+            ideas and suggestions with us.
+          </p>
+          <br />
+          <p className="text-lg">
+            We are grateful for your support and appreciate your business. If
+            there is anything we can do to assist you, please don&apos;t
+            hesitate to reach out. We strive to go above and beyond to meet your
+            needs and exceed your expectations. Thank you for choosing our
+            project to help streamline your work.
           </p>
         </div>
         <div className="flex flex-col mt-5 lg:flex-row lg:mt-20 lg:gap-20 justify-between">
@@ -28,14 +36,8 @@ const Contact = () => {
             <h2 className="text-xl md:text-2xl lg:text-3xl text-Accent">
               Jonatan Saveljeff
             </h2>
-            <h3 className="text-md md:text-lg lg:text-xl">
-              Flexible freelancing services
-            </h3>
-            <p className="text-sm md:text-md lg:text-lg mt-3">
-              I am a freelancer and web developer specializing in creating
-              top-quality digital content and improving customer satisfaction
-              and conversion rates. Let me help bring your vision to life with
-              my skills and passion for technology.
+            <p className="hidden md:flex justify-center mb-2 text-xl">
+              freelance.saveljeff@gmail.com
             </p>
             <div className="flex justify-evenly text-4xl my-4 text-CTA">
               <AiFillTwitterSquare
@@ -57,9 +59,6 @@ const Contact = () => {
                 className="hover:cursor-pointer hover:bg-opacity-90"
               />
             </div>
-            <p className="hidden md:flex justify-center my-4 text-Accent text-xl">
-              saveljeffjonatan@gmail.com
-            </p>
           </div>
 
           <div className="my-6 lg:hidden" />
@@ -69,33 +68,24 @@ const Contact = () => {
             <h2 className="text-xl md:text-2xl lg:text-3xl text-Accent">
               Oscar Andersson
             </h2>
-            <h3 className="text-md md:text-lg lg:text-xl">
-              Lorem, ipsum dolor.
-            </h3>
-            <p className="text-sm md:text-md lg:text-lg mt-3">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea,
-              facilis labore cupiditate ut alias sed eveniet illum nisi dolores
-              illo tempora. Libero minus voluptate dolorum totam, laborum
-              voluptas impedit debitis!
+            <p className="hidden md:flex justify-center mb-2 text-xl">
+              anderssonoscar0@gmail.com
             </p>
             <div className="flex justify-evenly text-4xl my-4 text-CTA">
-              <AiFillTwitterSquare
-                className="hover:cursor-pointer hover:bg-opacity-90"
-                onClick={() => router.push("/")}
-              />
               <AiFillLinkedin
                 className="hover:cursor-pointer hover:bg-opacity-90"
-                onClick={() => router.push("/")}
+                onClick={() =>
+                  router.push("https://www.linkedin.com/in/anderssonoscar0/")
+                }
               />
 
               <AiFillGithub
-                onClick={() => router.push("/")}
+                onClick={() =>
+                  router.push("https://github.com/anderssonoscar0")
+                }
                 className="hover:cursor-pointer hover:bg-opacity-90"
               />
             </div>
-            <p className="hidden md:flex justify-center text-Accent text-xl">
-              foo@andersson.lazy
-            </p>
           </div>
         </div>
 
