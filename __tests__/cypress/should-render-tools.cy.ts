@@ -19,7 +19,7 @@ describe("should render tools", () => {
       cy.get("head meta[name=keywords]").should(
         "have.attr",
         "content",
-        tool.meta.keywords.join(",")
+        tool.meta.keywords.join(", ")
       );
     });
   });
