@@ -12,14 +12,14 @@ describe("should render tools", () => {
       cy.get("head meta[name=description]").should(
         "have.attr",
         "content",
-        tool.shortDesc
+        tool.meta.description
       );
 
       // Tool should have meta keywords set
       cy.get("head meta[name=keywords]").should(
         "have.attr",
         "content",
-        tool.keywords.join(",")
+        tool.meta.keywords.join(",")
       );
     });
   });
