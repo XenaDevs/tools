@@ -5,10 +5,10 @@ export const Head = ({ tool }: { tool: ToolMetaData }) => {
   return (
     <NextHead>
       <title>{tool.label}</title>
-      <meta name="keywords" content={tool.keywords.join(",")} />
-      <meta name="description" content={tool.shortDesc} />
-      <meta name="twitter:title" content={tool.label} />
-      <meta name="twitter:description" content={tool.shortDesc} />
+      <meta name="keywords" content={tool.meta.keywords.join(", ")} />
+      <meta name="description" content={tool.meta.description} />
+      <meta name="twitter:title" content={tool.meta.title} />
+      <meta name="twitter:description" content={tool.meta.description} />
     </NextHead>
   );
 };
