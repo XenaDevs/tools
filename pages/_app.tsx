@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { HomeButton } from "../components";
 import { addToolVisit } from "../utils/local-storage";
@@ -8,10 +8,20 @@ import { useEffect } from "react";
 import Footer from "./_footer";
 import Head from "next/head";
 import Script from "next/script";
+import { GTMPageView } from "utils/gtm";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   const homePath = router.pathname === "/";
+
+  // Initiate GTM
+  useEffect(() => {
+    const handleRouteChange = (url: string) => GTMPageView(url);
+    Router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      Router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
 
   useEffect(() => {
     const path = router.pathname;
