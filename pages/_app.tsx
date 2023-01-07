@@ -46,6 +46,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         })(window,document,'script','dataLayer','GTM-W2Z8CBD')
       `}
       </Script>
+      <Script
+        id="google_ads"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7374607841609153"
+        crossOrigin="anonymous"
+      />
       <Footer />
     </>
   );
