@@ -6,7 +6,7 @@ describe("should render tools", () => {
       cy.visit(tool.path);
 
       // Tool should have title set
-      cy.get("head title").should("include.text", tool.label);
+      cy.get("head title").should("include.text", tool.meta.title);
 
       // Tool should have meta description set
       cy.get("head meta[name=description]").should(
