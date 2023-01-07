@@ -12,6 +12,11 @@ export default class Document extends NextDocument {
         <body className="font-poppins bg-BG text-White">
           <Main />
           <NextScript />
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2Z8CBD" height="0" width="0" style="display: none; visibility: hidden;" />`,
+            }}
+          />
         </body>
       </Html>
     );
