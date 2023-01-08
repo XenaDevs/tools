@@ -37,6 +37,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7374607841609153"
           crossOrigin="anonymous"
         ></script>
+        <meta name="msvalidate.01" content="B9D02066D8DFE26FBAC9B6A1CAFD5A73" />
       </Head>
       <GoogleAnalytics trackPageViews />
       {!homePath && <HomeButton />}
