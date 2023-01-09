@@ -38,6 +38,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           crossOrigin="anonymous"
         ></script>
         <meta name="msvalidate.01" content="B9D02066D8DFE26FBAC9B6A1CAFD5A73" />
+        <meta name="google-site-verification" content="p53MEb9hCZV5iUNGxpHxnaRPOkwFSY5_33nbffbcSyw" />
       </Head>
       <GoogleAnalytics trackPageViews />
       {!homePath && <HomeButton />}
