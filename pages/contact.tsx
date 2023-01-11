@@ -17,9 +17,17 @@ const Contact = () => {
         </p>
         <ul className="list-disc content-between space-y-4 text-sm">
           <li className="text-left">
-            Share your feedback and ideas with us in our Discord community. We
-            offer <span className="text-Accent font-bold">free feature</span>{" "}
-            requests and appreciate your input.
+            Share your feedback and ideas with us in our{" "}
+            <Link
+              className="text-CTA underline"
+              href="/discord"
+              target="_blank"
+            >
+              Discord
+            </Link>{" "}
+            community. We offer{" "}
+            <span className="text-Accent font-bold">free feature</span> requests
+            and appreciate your input.
           </li>
           <li className="text-left">
             If you need assistance or have any questions, don&apos;t hesitate to
@@ -31,7 +39,7 @@ const Contact = () => {
             <span className="text-Accent font-bold">expectations.</span>
           </li>
         </ul>
-        <p className="text-md mt-4">
+        <p className="text-md mt-8 mb-4">
           We value your business and appreciate your support. Thank you for
           choosing our project to help streamline your work.
         </p>
