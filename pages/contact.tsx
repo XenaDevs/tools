@@ -81,6 +81,15 @@ const Contact = () => {
             {renderScreenDetails()}
           </div>
         </div>
+        <div className="flex sm:hidden flex-col w-fit mx-auto">
+          <Link
+            className="bg-CTA text-Black text-sm p-2 my-4 rounded-md w-fit mx-auto"
+            href="/discord"
+            target="_blank"
+          >
+            Support Discord
+          </Link>
+        </div>
         <div className="flex flex-col mt-5 lg:flex-row lg:mt-20 lg:gap-20 justify-between">
           <div className="mt-4 lg:w-1/2" id="jonatan">
             <h2 className="text-xl md:text-2xl lg:text-3xl text-Accent">
