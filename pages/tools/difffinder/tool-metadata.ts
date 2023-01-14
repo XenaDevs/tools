@@ -6,9 +6,9 @@ export const toolMetaData: ToolMetaData = {
   shortDesc: "Find string difference.",
   meta: {
     title:
-      "String Difference Finder: Quickly Locate Differences Between Two Strings",
+      "String Difference Finder: Quickly Locate Differences Between Strings",
     description:
-      "Our string difference tool allows you to quickly and easily locate differences between two strings. Simply enter the strings you want to compare, and our tool will highlight any differences between them. Whether you're looking for typos or trying to identify changes between versions of a document, our string comparison tool can help.",
+      "Our string difference tool quickly finds differences between two strings. Our tool highlights the differences. Ideal for typos or changes in documents.",
     keywords: [
       "String difference finder",
       "Compare strings",

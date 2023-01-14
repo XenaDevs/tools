@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import router from "next/router";
 import {
@@ -63,6 +64,12 @@ const Contact = () => {
 
   return (
     <main className="px-10 md:px-20 lg:px-30 max-w-7xl mx-auto">
+      <Head>
+        <title>Xena-dev | Contact us</title>
+        <meta name="twitter:title" content="Xena-dev | Contact us" />
+        <meta name="description" content="" /> {/* TODO */}
+        <meta name="twitter:description" content="" /> {/* TODO */}
+      </Head>
       <section className="min-h-full pt-10 md:mt-10">
         <h2 className="mt-6 mb-4 text-2xl text-Accent">
           Welcome to our contact page!
