@@ -1,6 +1,8 @@
 import QRCode from "qrcode";
 import React, { useEffect, useState } from "react";
 import { Button, InputTextArea } from "components";
+import { toolMetaData } from "./tool-metadata";
+import { Head } from "components/Head/Head";
 
 const QRTool = () => {
   const [text, setText] = useState("");
@@ -40,6 +42,7 @@ const QRTool = () => {
   return (
     <>
       <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
+        <Head tool={toolMetaData} />
         <section className="min-h-screen py-20">
           <div className="flex flex-col gap-12 items-center mb-10">
             <p>
