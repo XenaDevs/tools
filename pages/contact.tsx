@@ -18,9 +18,17 @@ const Contact = () => {
         </p>
         <ul className="list-disc content-between space-y-4 text-sm">
           <li className="text-left">
-            Share your feedback and ideas with us in our Discord community. We
-            offer <span className="text-Accent font-bold">free feature</span>{" "}
-            requests and appreciate your input.
+            Share your feedback and ideas with us in our{" "}
+            <Link
+              className="text-CTA underline"
+              href="https://discord.gg/fJpypWzSyH"
+              target="_blank"
+            >
+              Discord
+            </Link>{" "}
+            community. We offer{" "}
+            <span className="text-Accent font-bold">free feature</span> requests
+            and appreciate your input.
           </li>
           <li className="text-left">
             If you need assistance or have any questions, don&apos;t hesitate to
@@ -32,7 +40,7 @@ const Contact = () => {
             <span className="text-Accent font-bold">expectations.</span>
           </li>
         </ul>
-        <p className="text-md mt-4">
+        <p className="text-md mt-8 mb-4">
           We value your business and appreciate your support. Thank you for
           choosing our project to help streamline your work.
         </p>
@@ -63,14 +71,14 @@ const Contact = () => {
   };
 
   return (
-    <main className="px-10 md:px-20 lg:px-30 max-w-7xl mx-auto">
-      <Head>
-        <title>Xena-dev | Contact us</title>
-        <meta name="twitter:title" content="Xena-dev | Contact us" />
-        <meta name="description" content="" /> {/* TODO */}
-        <meta name="twitter:description" content="" /> {/* TODO */}
-      </Head>
-      <section className="min-h-full pt-10 md:mt-10">
+    <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
+      <section className="min-h-full">
+        <Head>
+          <title>Xena-dev | Contact us</title>
+          <meta name="twitter:title" content="Xena-dev | Contact us" />
+          <meta name="description" content="" /> {/* TODO */}
+          <meta name="twitter:description" content="" /> {/* TODO */}
+        </Head>
         <h2 className="mt-6 mb-4 text-2xl text-Accent">
           Welcome to our contact page!
         </h2>
@@ -79,6 +87,15 @@ const Contact = () => {
           <div className="hidden md:flex md:flex-col">
             {renderScreenDetails()}
           </div>
+        </div>
+        <div className="flex sm:hidden flex-col w-fit mx-auto">
+          <Link
+            className="bg-CTA text-Black text-sm p-2 my-4 rounded-md w-fit mx-auto"
+            href="https://discord.gg/fJpypWzSyH"
+            target="_blank"
+          >
+            Support Discord
+          </Link>
         </div>
         <div className="flex flex-col mt-5 lg:flex-row lg:mt-20 lg:gap-20 justify-between">
           <div className="mt-4 lg:w-1/2" id="jonatan">
@@ -137,13 +154,13 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="hidden lg:flex mt-32" />
+        <div className="hidden lg:flex mt-20" />
         <div className="mt-8 lg:hidden" />
 
         <div className="hidden lg:flex flex-col w-fit mx-auto">
           <Link
             className="bg-CTA text-Black text-lg p-2 rounded-md w-fit mx-auto"
-            href="/discord"
+            href="https://discord.gg/fJpypWzSyH"
             target="_blank"
           >
             Support Discord
