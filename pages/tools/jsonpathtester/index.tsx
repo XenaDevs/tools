@@ -27,7 +27,7 @@ const JsonPathTester = () => {
       <Head tool={toolMetaData} />
 
       <section className="min-h-screen py-20">
-        <h2 className="text-xl mt-10">Test your JSON path</h2>
+        <h1 className="text-xl mt-10">Test your JSON path</h1>
         <div className="flex flex-col items-center">
           <InputTextArea
             placeHolder={"Paste data here..."}

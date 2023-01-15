@@ -23,9 +23,9 @@ const Difffinder = () => {
       <Head tool={toolMetaData} />
 
       <section className="min-h-screen py-10">
-        <h2 className="text-xl mt-10">
+        <h1 className="text-xl mt-10">
           Compare two sets of inputs and find all differences
-        </h2>
+        </h1>
         <div className="flex flex-col max-w-5xl mt-10 gap-10 lg:flex-row justify-center">
           <div className="w-full">
             {missingValues[0]?.length > 0 && (

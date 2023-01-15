@@ -1,5 +1,5 @@
 import { Head } from "components/Head/Head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Button } from "../../../components";
 import { toolMetaData } from "./tool-metadata";
@@ -8,12 +8,18 @@ const UuidGenerator = () => {
   const [amountToGenerate, setAmountToGenerate] = useState(1);
   const [uuids, setUuids] = useState<Array<string>>([]);
 
+  useEffect(() => {
+    setUuids([uuidv4()]);
+  }, []);
+
   return (
     <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
       <Head tool={toolMetaData} />
 
       <section className="min-h-screen py-20">
-        <div className="mb-10">
+        <h1 className="text-xl">UUID V4 generator</h1>
+
+        <div className="mb-10 mt-5">
           <input
             className="text-Black w-20 h-10 mr-5"
             placeholder="Amount"
