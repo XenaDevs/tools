@@ -71,7 +71,7 @@ const Contact = () => {
 
   return (
     <main className="px-10 md:px-20 lg:px-30 max-w-7xl mx-auto">
-      <section className="min-h-full pt-10 md:mt-10">
+      <section className="min-h-full">
         <h2 className="mt-6 mb-4 text-2xl text-Accent">
           Welcome to our contact page!
         </h2>

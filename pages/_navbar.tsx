@@ -30,17 +30,17 @@ const Navbar = () => {
   return (
     <div className="p-4 flex mx-auto">
       <h2 className="text-2xl text-Accent md:text-4xl">Xena</h2>
-      <div className="flex flex-col md:flex-row items-end md:items-center w-full justify-end md:mr-10">
+      <div className="flex flex-col md:flex-row items-end md:items-center w-full justify-end">
         <RxHamburgerMenu
           size={40}
-          className="hover:cursor-pointer text-CTA p-2"
+          className="flex md:hidden hover:cursor-pointer text-CTA p-2"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
         />
 
         {isOpen && openDropDown()}
-        <div className="hidden md:flex">
+        <div className="hidden md:flex gap-4">
           <Link href="/contact" className="hover:text-CTA hover:underline">
             Contact Us
           </Link>
