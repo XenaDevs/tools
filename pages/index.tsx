@@ -52,7 +52,7 @@ const Home = () => {
         <meta name="description" content="" /> {/* TODO */}
         <meta name="twitter:description" content="" /> {/* TODO */}
       </Head>
-      <main className="px-10 md:px-20 lg:px-40">
+      <main className="px-5 md:px-10 lg:px-30">
         <Navbar />
         <section className="min-h-full pt-10">
           <input
