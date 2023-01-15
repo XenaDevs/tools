@@ -2,13 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  padding: 0;
+:root, body, #__next {
+  height:100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+  padding:0;
+  width: 100%;
+ }
+ 
+ #layoutWrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height:100%;
+  width: 100%;
+ }
+ 
+ main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+ }
 
 * {
   box-sizing: border-box;

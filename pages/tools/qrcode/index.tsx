@@ -43,8 +43,8 @@ const QRTool = () => {
     <>
       <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
         <Head tool={toolMetaData} />
-        <section className="min-h-screen py-20">
-          <div className="flex flex-col gap-12 items-center mb-10">
+        <section>
+          <div className="flex flex-col mt-2 gap-8 items-center mb-10">
             <h1>QR-code creation tool</h1>
             <p>
               We support creation of QR codes with emojis, chinese, cyrillic,

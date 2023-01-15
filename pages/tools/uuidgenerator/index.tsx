@@ -16,7 +16,7 @@ const UuidGenerator = () => {
     <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
       <Head tool={toolMetaData} />
 
-      <section className="min-h-screen py-20">
+      <section className=" py-20">
         <h1 className="text-xl">UUID V4 generator</h1>
 
         <div className="mb-10 mt-5">

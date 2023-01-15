@@ -5,9 +5,9 @@ import { GoogleAnalytics } from "nextjs-google-analytics";
 import { HomeButton } from "../components";
 import { addToolVisit } from "../utils/local-storage";
 import { useEffect } from "react";
-import Footer from "./_footer";
 import Head from "next/head";
 import { GTMPageView } from "utils/gtm";
+import Footer from "./_footer";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -44,9 +44,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <GoogleAnalytics trackPageViews />
-      {!homePath && <HomeButton />}
-      <Component {...pageProps} />
-      <Footer />
+      <div id="layoutWrapper">
+        {!homePath && <HomeButton />}
+        <main className="px-5 md:px-10 lg:px-30">
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 };

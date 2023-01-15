@@ -22,7 +22,7 @@ const Difffinder = () => {
     <main className="px-10 md:px-20 lg:px-30 max-w-6xl mx-auto">
       <Head tool={toolMetaData} />
 
-      <section className="min-h-screen py-10">
+      <section className=" py-10">
         <h1 className="text-xl mt-10">
           Compare two sets of inputs and find all differences
         </h1>

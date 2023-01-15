@@ -25,7 +25,7 @@ const DbFormat = () => {
     <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
       <Head tool={toolMetaData} />
 
-      <section className="min-h-screen py-10">
+      <section className=" py-10">
         <h1 className="text-xl">Database list formatter</h1>
         <div className="flex justify-center gap-24 lg:gap-36 mt-8">
           <div>

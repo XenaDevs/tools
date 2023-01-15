@@ -52,36 +52,34 @@ const Home = () => {
         <meta name="description" content="" /> {/* TODO */}
         <meta name="twitter:description" content="" /> {/* TODO */}
       </Head>
-      <main className="px-5 md:px-10 lg:px-30">
-        <Navbar />
-        <section className="min-h-full pt-10">
-          <input
-            className="text-Black w-full  md:w-1/2 h-10 p-1 rounded"
-            type={"search"}
-            placeholder="Search Tool"
-            onChange={(e) => {
-              const result = fuse.search(e.target.value);
-              const paths = result.map(({ item }) => item.path);
+      <Navbar />
+      <section className="pt-10">
+        <input
+          className="text-Black w-full  md:w-1/2 h-10 p-1 rounded"
+          type={"search"}
+          placeholder="Search Tool"
+          onChange={(e) => {
+            const result = fuse.search(e.target.value);
+            const paths = result.map(({ item }) => item.path);
 
-              const foundTools = toolsList.filter((tool) =>
-                paths.includes(tool.path)
-              );
-              setSearchResult(foundTools.length > 0 ? foundTools : toolsList);
-            }}
-          />
+            const foundTools = toolsList.filter((tool) =>
+              paths.includes(tool.path)
+            );
+            setSearchResult(foundTools.length > 0 ? foundTools : toolsList);
+          }}
+        />
 
-          <div className="bg-Black text-White p-4 mb-6 flex flex-col md:flex-row gap-4 justify-center">
-            {favoriteTools.length > 0 && (
-              <span className="text-Accent">Your top tools: </span>
-            )}
-            {favoriteTools}
-          </div>
+        <div className="bg-Black text-White p-4 mb-6 flex flex-col md:flex-row gap-4 justify-center">
+          {favoriteTools.length > 0 && (
+            <span className="text-Accent">Your top tools: </span>
+          )}
+          {favoriteTools}
+        </div>
 
-          <div className="my-6 grid md:grid-cols-2 2xl:grid-cols-4 gap-10 items-center">
-            {navTools}
-          </div>
-        </section>
-      </main>
+        <div className="my-6 grid md:grid-cols-2 2xl:grid-cols-4 gap-10 items-center">
+          {navTools}
+        </div>
+      </section>
     </>
   );
 };

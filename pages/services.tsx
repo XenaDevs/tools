@@ -3,7 +3,7 @@ import Link from "next/link";
 const OtherServices = () => {
   return (
     <main className="px-10 md:px-20 lg:px-30 max-w-7xl mx-auto">
-      <h2 className="pt-16 mb-2 md:mt-10 text-lg md:text-2xl text-Accent">
+      <h2 className="pt-5 mb-2 text-lg md:text-2xl text-Accent">
         Did you know that we offer more services than our tools?
       </h2>
       <p className="md:text-lg">
