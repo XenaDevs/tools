@@ -26,7 +26,7 @@ const JsonPathTester = () => {
     <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
       <Head tool={toolMetaData} />
 
-      <section className="min-h-screen py-20">
+      <section className=" py-20">
         <h1 className="text-xl mt-10">Test your JSON path</h1>
         <div className="flex flex-col items-center">
           <InputTextArea

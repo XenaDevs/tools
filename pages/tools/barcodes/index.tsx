@@ -57,7 +57,7 @@ const BarCodes = () => {
     <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
       <Head tool={toolMetaData} />
 
-      <section className="min-h-screen py-10">
+      <section className=" py-10">
         <h1 className="text-xl">Barcode Generator</h1>
 
         <div>

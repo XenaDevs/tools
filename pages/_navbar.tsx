@@ -28,7 +28,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="p-4 flex mx-auto">
+    <div className="p-4 flex">
       <h2 className="text-2xl text-Accent md:text-4xl">Xena</h2>
       <div className="flex flex-col md:flex-row items-end md:items-center w-full justify-end">
         <RxHamburgerMenu
