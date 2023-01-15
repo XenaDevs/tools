@@ -7,7 +7,7 @@ export const toolMetaData: ToolMetaData = {
   meta: {
     title: "Test Your JSON Paths with Our Advanced JSON Path Tester",
     description:
-      "Our JSON path tester is a powerful and easy-to-use tool that allows users to quickly test and validate their JSON paths. Simply enter your JSON and your JSON path and our tool will verify that it is correct and fully functional.",
+      "Our JSON path tester is a user-friendly tool that quickly verifies JSON paths. Simply enter JSON and path, and our tool will validate it for functionality.",
     keywords: [
       "JSON path tester",
       "Test JSON path",

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import router from "next/router";
 import {
@@ -70,8 +71,14 @@ const Contact = () => {
   };
 
   return (
-    <main className="px-10 md:px-20 lg:px-30 max-w-7xl mx-auto">
+    <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
       <section className="min-h-full">
+        <Head>
+          <title>Xena-dev | Contact us</title>
+          <meta name="twitter:title" content="Xena-dev | Contact us" />
+          <meta name="description" content="" /> {/* TODO */}
+          <meta name="twitter:description" content="" /> {/* TODO */}
+        </Head>
         <h2 className="mt-6 mb-4 text-2xl text-Accent">
           Welcome to our contact page!
         </h2>
@@ -147,7 +154,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="hidden lg:flex mt-32" />
+        <div className="hidden lg:flex mt-20" />
         <div className="mt-8 lg:hidden" />
 
         <div className="hidden lg:flex flex-col w-fit mx-auto">

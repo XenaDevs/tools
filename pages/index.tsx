@@ -25,7 +25,7 @@ const Home = () => {
       className="border text-Black bg-White p-4 w-full rounded-md shadow-md shadow-Accent"
     >
       <Link href={tool.path} passHref>
-        <h1 className="text-2xl mb-2">{tool.label}</h1>
+        <h2 className="text-2xl mb-2">{tool.label}</h2>
         <p>{tool.shortDesc}</p>
       </Link>
     </div>
