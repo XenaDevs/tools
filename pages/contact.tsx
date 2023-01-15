@@ -20,7 +20,7 @@ const Contact = () => {
             Share your feedback and ideas with us in our{" "}
             <Link
               className="text-CTA underline"
-              href="/discord"
+              href="https://discord.gg/fJpypWzSyH"
               target="_blank"
             >
               Discord
@@ -84,7 +84,7 @@ const Contact = () => {
         <div className="flex sm:hidden flex-col w-fit mx-auto">
           <Link
             className="bg-CTA text-Black text-sm p-2 my-4 rounded-md w-fit mx-auto"
-            href="/discord"
+            href="https://discord.gg/fJpypWzSyH"
             target="_blank"
           >
             Support Discord
@@ -153,7 +153,7 @@ const Contact = () => {
         <div className="hidden lg:flex flex-col w-fit mx-auto">
           <Link
             className="bg-CTA text-Black text-lg p-2 rounded-md w-fit mx-auto"
-            href="/discord"
+            href="https://discord.gg/fJpypWzSyH"
             target="_blank"
           >
             Support Discord
