@@ -2,6 +2,7 @@ export interface InputTextAreaParams {
   width?: number;
   placeHolder: string;
   onChangeFunction: Function;
+  preWrittenInput?: string;
 }
 
 export const InputTextArea = (params: InputTextAreaParams) => {
@@ -14,6 +15,7 @@ export const InputTextArea = (params: InputTextAreaParams) => {
       onChange={(e) => {
         onChangeFunction(e.target.value);
       }}
+      defaultValue={params.preWrittenInput}
     />
   );
 };
