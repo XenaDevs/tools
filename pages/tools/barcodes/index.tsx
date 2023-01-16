@@ -1,4 +1,4 @@
-import { Head } from "components/Head/Head";
+import { ToolTemplate } from "components";
 import { useEffect, useState } from "react";
 //import { Ean13Utils } from "ean13-lib";
 const jsBarcode = require("jsbarcode");
@@ -53,26 +53,22 @@ const BarCodes = () => {
     generateBarcodes();
   }, []);
 
-  return (
-    <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
-      <Head tool={toolMetaData} />
+  const tool = (
+    <>
+      <div>
+        <p>{error}</p>
+        <div className="mt-10" />
+        <InputTextArea
+          placeHolder={"Paste data here..."}
+          onChangeFunction={testing}
+        />
+      </div>
 
-      <section className=" py-10">
-        <h1 className="text-xl">Barcode Generator</h1>
-
-        <div>
-          <p>{error}</p>
-          <div className="mt-10" />
-          <InputTextArea
-            placeHolder={"Paste data here..."}
-            onChangeFunction={testing}
-          />
-        </div>
-
-        {buildAllIcons()}
-      </section>
-    </main>
+      {buildAllIcons()}
+    </>
   );
+
+  return <ToolTemplate metadata={toolMetaData} tool={tool} />;
 };
 
 export default BarCodes;
