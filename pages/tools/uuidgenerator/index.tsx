@@ -26,15 +26,7 @@ const UuidGenerator = () => {
   const [uuids, setUuids] = useState<Array<string>>([]);
 
   useEffect(() => {
-    setUuids([
-      uuidv4(),
-      uuidv4(),
-      uuidv4(),
-      uuidv4(),
-      uuidv4(),
-      uuidv4(),
-      uuidv4(),
-    ]);
+    setUuids([uuidv4()]);
   }, []);
 
   const tool = (
