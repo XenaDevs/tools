@@ -2,10 +2,21 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {},
-    specPattern: "__tests__/cypress/*cy.{js,jsx,ts,tsx}",
+    specPattern: "cypress/e2e/*.cy.{ts,tsx}",
     baseUrl: "http://localhost:3000",
-    supportFile: false,
+    retries: {
+      runMode: 3,
+    },
+    viewportHeight: 1080,
+    viewportWidth: 1920,
     video: false,
+    screenshotOnRunFailure: false,
+  },
+
+  component: {
+    devServer: {
+      framework: "next",
+      bundler: "webpack",
+    },
   },
 });
