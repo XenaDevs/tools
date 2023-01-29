@@ -53,7 +53,6 @@ const UuidGenerator = () => {
     </>
   );
 
-  // eslint-disable-next-line react/jsx-no-undef
   return <ToolTemplate metadata={toolMetaData} tool={tool} />;
 };
 

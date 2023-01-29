@@ -1,6 +1,5 @@
-import { Head } from "components/Head/Head";
 import { useState } from "react";
-import { Button, InputTextArea } from "../../../components";
+import { Button, InputTextArea, ToolTemplate } from "../../../components";
 import { toolMetaData } from "./tool-metadata";
 
 const Difffinder = () => {
@@ -18,62 +17,58 @@ const Difffinder = () => {
     ]);
   };
 
-  return (
-    <main className="px-10 md:px-20 lg:px-30 max-w-6xl mx-auto">
-      <Head tool={toolMetaData} />
+  const tool = (
+    <>
+      <div className="flex flex-col max-w-5xl mt-10 gap-10 lg:flex-row justify-center">
+        <div className="w-full">
+          <InputTextArea
+            placeHolder={"Paste data here..."}
+            onChangeFunction={setLeftInput}
+          />
 
-      <section className=" py-10">
-        <h1 className="text-xl mt-10">
-          Compare two sets of inputs and find all differences
-        </h1>
-        <div className="flex flex-col max-w-5xl mt-10 gap-10 lg:flex-row justify-center">
-          <div className="w-full">
-            {missingValues[0]?.length > 0 && (
-              <>
-                <p className="text-xl font-medium mb-3">
-                  The below list is missing these values:
-                </p>
-                <p>
-                  {missingValues[0].map((v, i) => (
-                    <span key={i}>{v}</span>
-                  ))}
-                </p>
-              </>
-            )}
-
-            <InputTextArea
-              placeHolder={"Paste data here..."}
-              onChangeFunction={setLeftInput}
-            />
-          </div>
-          <div className="w-full">
-            {missingValues[1]?.length > 0 && (
-              <>
-                <p className="text-xl font-medium mb-3">
-                  The below list is missing these values:
-                </p>
-                <p>
-                  {missingValues[1].map((v, i) => (
-                    <span key={i}>{v}</span>
-                  ))}
-                </p>
-              </>
-            )}
-            <InputTextArea
-              placeHolder={"Paste data here..."}
-              onChangeFunction={setRightInput}
-            />
-          </div>
+          {missingValues[0]?.length > 0 && (
+            <>
+              <p className="text-xl font-medium mb-3">
+                The below list is missing these values:
+              </p>
+              <p>
+                {missingValues[0].map((v, i) => (
+                  <span key={i}>{v}</span>
+                ))}
+              </p>
+            </>
+          )}
         </div>
 
-        <Button
-          onClick={() => checkForDiffs()}
-          disabled={leftDataInput.length === 0 || rightDataInput.length === 0}
-          text="Compare inputs"
-        />
-      </section>
-    </main>
+        <div className="w-full">
+          <InputTextArea
+            placeHolder={"Paste data here..."}
+            onChangeFunction={setRightInput}
+          />
+
+          {missingValues[1]?.length > 0 && (
+            <>
+              <p className="text-xl font-medium mb-3">
+                The below list is missing these values:
+              </p>
+              <p>
+                {missingValues[1].map((v, i) => (
+                  <span key={i}>{v}</span>
+                ))}
+              </p>
+            </>
+          )}
+        </div>
+      </div>
+      <Button
+        onClick={() => checkForDiffs()}
+        disabled={leftDataInput.length === 0 || rightDataInput.length === 0}
+        text="Compare inputs"
+      />
+    </>
   );
+
+  return <ToolTemplate tool={tool} metadata={toolMetaData} />;
 };
 
 export default Difffinder;

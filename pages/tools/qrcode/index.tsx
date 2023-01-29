@@ -1,8 +1,7 @@
 import QRCode from "qrcode";
 import React, { useEffect, useState } from "react";
-import { Button, InputTextArea } from "components";
+import { Button, InputTextArea, ToolTemplate } from "components";
 import { toolMetaData } from "./tool-metadata";
-import { Head } from "components/Head/Head";
 
 const QRTool = () => {
   const [text, setText] = useState("");
@@ -39,30 +38,26 @@ const QRTool = () => {
     }
   }, []);
 
-  return (
+  const tool = (
     <>
-      <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
-        <Head tool={toolMetaData} />
-        <section>
-          <div className="flex flex-col mt-2 gap-8 items-center mb-10">
-            <h1>QR-code creation tool</h1>
-            <p>
-              We support creation of QR codes with emojis, chinese, cyrillic,
-              greek and japanese characters.
-            </p>
-          </div>
-          <p>Here is a preview of a finished QR</p>
-          <p>Scan me!</p>
-          <div className="flex justify-center" id="canvasWrapper"></div>
-          <InputTextArea
-            placeHolder="Add custom content here"
-            onChangeFunction={inputQrText}
-          />
-          <Button onClick={() => generateQRCode(text)} text="Generate Qr" />
-        </section>
-      </main>
+      <h1>QR-code creation tool</h1>
+      <p>
+        We support creation of QR codes with emojis, chinese, cyrillic, greek
+        and japanese characters.
+      </p>
+
+      <p>Here is a preview of a finished QR</p>
+      <p>Scan me!</p>
+      <div className="flex justify-center" id="canvasWrapper"></div>
+      <InputTextArea
+        placeHolder="Add custom content here"
+        onChangeFunction={inputQrText}
+      />
+      <Button onClick={() => generateQRCode(text)} text="Generate Qr" />
     </>
   );
+
+  return <ToolTemplate tool={tool} metadata={toolMetaData} />;
 };
 
 export default QRTool;
