@@ -1,6 +1,5 @@
-import { Head } from "components/Head/Head";
 import { useState } from "react";
-import { InputArea, InputTextArea } from "../../../components";
+import { InputArea, InputTextArea, ToolTemplate } from "../../../components";
 import { toolMetaData } from "./tool-metadata";
 
 const JsonPathTester = () => {
@@ -22,26 +21,22 @@ const JsonPathTester = () => {
     }
   };
 
-  return (
-    <main className="px-10 md:px-20 lg:px-30 max-w-5xl mx-auto">
-      <Head tool={toolMetaData} />
-
-      <section className=" py-20">
-        <h1 className="text-xl mt-10">Test your JSON path</h1>
-        <div className="flex flex-col items-center">
-          <InputTextArea
-            placeHolder={"Paste data here..."}
-            onChangeFunction={inputJson}
-          />
-          <InputArea
-            onChangeFunction={testJson}
-            placeHolder={"test.files[0].filename"}
-          />
-          <p className="mt-12">{JSON.stringify(jsonResult)}</p>
-        </div>
-      </section>
-    </main>
+  const tool = (
+    <>
+      {" "}
+      <InputTextArea
+        placeHolder={"Paste data here..."}
+        onChangeFunction={inputJson}
+      />
+      <InputArea
+        onChangeFunction={testJson}
+        placeHolder={"test.files[0].filename"}
+      />
+      <p className="mt-12">{JSON.stringify(jsonResult)}</p>
+    </>
   );
+
+  return <ToolTemplate tool={tool} metadata={toolMetaData} />;
 };
 
 export default JsonPathTester;
