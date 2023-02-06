@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import xenaLogo from "/public/Xena-dev.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,8 +31,14 @@ const Navbar = () => {
 
   return (
     <div className="p-4 flex">
-      <h2 className="text-2xl text-Accent md:text-4xl">Xena</h2>
-      <div className="flex flex-col md:flex-row items-end md:items-center w-full justify-end">
+      <Image
+        src={xenaLogo}
+        alt="company_logo"
+        width={100}
+        height={100}
+        priority
+      />
+      <div className="flex flex-col md:flex-row items-end md:items-center w-full justify-center lg:justify-end">
         <RxHamburgerMenu
           size={40}
           className="flex md:hidden hover:cursor-pointer text-CTA p-2"
