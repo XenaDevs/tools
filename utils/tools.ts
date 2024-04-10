@@ -5,6 +5,7 @@ import { toolMetaData as jsonpathtester } from "../pages/tools/jsonpathtester/to
 import { toolMetaData as uuidgenerator } from "../pages/tools/uuidgenerator/tool-metadata";
 import { toolMetaData as qrCode } from "../pages/tools/qrcode/tool-metadata";
 import { toolMetaData as randomGenerator } from "pages/tools/random-generator/tool-metadata";
+import { toolMetaData as base64 } from "pages/tools/base64/tool-metadata";
 
 export interface ToolMetaData {
   path: string;
@@ -25,6 +26,7 @@ export const toolsList: Array<ToolMetaData> = [
   jsonpathtester,
   uuidgenerator,
   randomGenerator,
+  base64,
 ];
 
 export const toolMap = toolsList.reduce(
