@@ -15,7 +15,7 @@
   "dependencies": {
     "ean13-lib": "0.0.5",
     "fuse.js": "7.0.0",
-    "jsbarcode": "3.11.5",
+    "jsbarcode": "3.11.6",
     "next": "13.1.5",
     "nextjs-google-analytics": "2.2.2",
     "qrcode": "1.5.1",
