@@ -147,7 +147,7 @@ const Contact = () => {
 
               <AiFillGithub
                 onClick={() =>
-                  router.push("https://github.com/anderssonoscar0")
+                  router.push("https://github.com/winbergoscar0")
                 }
                 className="hover:cursor-pointer hover:bg-opacity-90"
               />
