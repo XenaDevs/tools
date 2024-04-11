@@ -132,16 +132,16 @@ const Contact = () => {
 
           <div className="mt-4 lg:w-1/2 mb-8" id="oscar">
             <h2 className="text-xl md:text-2xl lg:text-3xl text-Accent">
-              Oscar Andersson
+              Oscar Winberg
             </h2>
             <p className="hidden md:flex justify-center mb-2 text-xl">
-              anderssonoscar0@gmail.com
+              winbergoscar0@gmail.com
             </p>
             <div className="flex justify-center gap-10 text-4xl my-4 text-CTA">
               <AiFillLinkedin
                 className="hover:cursor-pointer hover:bg-opacity-90"
                 onClick={() =>
-                  router.push("https://www.linkedin.com/in/anderssonoscar0/")
+                  router.push("https://www.linkedin.com/in/winbergoscar0/")
                 }
               />
 
